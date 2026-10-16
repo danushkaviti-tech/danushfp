@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaviti Danush | 3D Interactive Portfolio — Full Stack Developer& AI Engineer(RAG)</title>
+  <meta name="description"
+    content="Portfolio of Kaviti Danush — Full Stack Web Developer, AI RAG Engineer, LeetCode Knight, and CodeChef 3-Star with 1,700+ problems solved." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="/index.css" />
+</head>
+
+<body class="intro-active">
+  <!-- INITIAL CYBER PORTAL GATE (Website does NOT render until flash beam ignites) -->
+  <div class="portal-gate" id="portal-gate" role="button" tabindex="0" title="Click anywhere or press Enter to launch">
+    <div class="portal-particles-layer"></div>
+    <div class="portal-reactor-wrap">
+      <div class="portal-ring ring-outer"></div>
+      <div class="portal-ring ring-mid"></div>
+      <div class="portal-ring ring-inner"></div>
+      <div class="portal-core-orb">
+        <svg viewBox="0 0 32 32" width="46" height="46" fill="none">
+          <path d="M6 6L16 2L26 6L26 26L16 30L6 26Z" stroke="var(--primary)" stroke-width="2.5"
+            stroke-linejoin="round" />
+          <path d="M11 11L16 14L21 11M16 14V22" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" />
+        </svg>
+      </div>
+      <div class="portal-energy-pulse"></div>
+    </div>
+
+    <div class="portal-content-box">
+      <div class="portal-status-pill">
+        <span class="portal-beacon-dot"></span>
+        <span>QUANTUM SYSTEM READY // NEURAL PORTAL STANDBY</span>
+      </div>
+      <h1 class="portal-hero-title">
+        KAVITI DANUSH
+      </h1>
+      <p class="portal-hero-sub">
+        Full Stack Web Developer &amp; AI RAG Systems Engineer
+      </p>
+
+      <button class="btn-ignite-portal" id="btn-ignite-portal" type="button">
+        <span class="btn-ignite-pulse"></span>
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+        </svg>
+        <span>INITIALIZE SYSTEM // ENTER WORLD</span>
+      </button>
+
+      <div class="portal-click-prompt">
+        <span>⚡ Click anywhere on screen or press Enter to trigger quantum flash &amp; audio</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Cyber Cursor -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <!-- Background 3D WebGL Canvas -->
+  <div id="webgl-canvas-container"></div>
+  <div class="ambient-fx-layer"></div>
+  <div class="grid-overlay"></div>
+
+  <!-- Header & Cyber Navigation -->
+  <header class="site-header">
+    <!-- Top Feature Announcement Pill Button: New Features Coming Soon -->
+    <div class="top-announcement-wrap">
+      <button class="top-feature-pill-btn" id="btn-upcoming-features"
+        title="Click to Preview Upcoming v2.0 AI Features">
+        <span class="pill-beacon">
+          <span class="beacon-pulse"></span>
+          <span>UPCOMING v2.0</span>
+        </span>
+        <span class="pill-sparkle">✨</span>
+        <span class="pill-text-strong">New Feature Available Soon:</span>
+        <span class="pill-text-desc">Personal RAG Model &amp; Autonomous AI Navigation System</span>
+        <span class="pill-wip-badge">🛠️ STILL WORKING</span>
+        <span class="pill-arrow-btn">
+          <span>Preview</span>
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </span>
+      </button>
+    </div>
+
+    <nav class="nav-glass">
+      <a href="#hero" class="brand-badge" id="brand-link">
+        <div class="brand-symbol">
+          <svg viewBox="0 0 32 32" width="22" height="22" fill="none">
+            <path d="M6 6L16 2L26 6L26 26L16 30L6 26Z" stroke="currentColor" stroke-width="2.2"
+              stroke-linejoin="round" />
+            <path d="M11 11L16 14L21 11M16 14V22" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">DANUSH</span>
+          <span class="brand-sub">AI & FULL STACK</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#achievements" class="nav-link">Achievements</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#journey" class="nav-link">Journey</a></li>
+        <li><a href="#terminal" class="nav-link">Terminal</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Audio Synth Toggle (On by Default) -->
+        <button class="audio-toggle-btn active" id="audio-toggle" title="Toggle Futuristic Audio FX">
+          <div class="audio-bars">
+            <div class="audio-bar"></div>
+            <div class="audio-bar"></div>
+            <div class="audio-bar"></div>
+          </div>
+          <span id="audio-status-text">FX ON</span>
+        </button>
+
+        <!-- 5 Accent Color Palettes Dock -->
+        <div class="palette-dock" id="palette-dock" title="Select 1 of 5 Holographic Accent Palettes">
+          <button class="palette-dot-btn active" data-palette="green" title="Cyber Emerald (Default)"
+            style="--dot-color: #00f5a0;"></button>
+          <button class="palette-dot-btn" data-palette="purple" title="Cosmic Violet"
+            style="--dot-color: #c084fc;"></button>
+          <button class="palette-dot-btn" data-palette="cyan" title="Electric Cyan"
+            style="--dot-color: #00f2fe;"></button>
+          <button class="palette-dot-btn" data-palette="gold" title="Solar Amber"
+            style="--dot-color: #fbbf24;"></button>
+          <button class="palette-dot-btn" data-palette="crimson" title="Hyper Crimson"
+            style="--dot-color: #ff3366;"></button>
+        </div>
+
+        <!-- Theme Toggle (Cycle) -->
+        <button class="btn-icon-hud" id="theme-toggle" title="Cycle Next Holographic Palette">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+        </button>
+
+        <!-- Resume Modal Button -->
+        <button class="btn-nav-cta" id="nav-resume-btn">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="16" y1="13" x2="8" y2="13" />
+            <line x1="16" y1="17" x2="8" y2="17" />
+            <polyline points="10 9 9 9 8 9" />
+          </svg>
+          <span>Resume</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <div class="content-wrapper">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+
+          <!-- Left Column: Copy & Stats -->
+          <div class="hero-content">
+            <div class="status-pill">
+              <span class="pulsing-dot"></span>
+              <span>OPEN TO OPPORTUNITIES & INTERNSHIPS 2026</span>
+            </div>
+
+            <h1 class="hero-title">
+              Hi, I'm <br>
+              <span class="text-gradient">Kaviti Danush</span>
+            </h1>
+
+            <p class="hero-subtitle">
+              <span class="highlight-role">Full Stack Web Developer</span> & <span class="highlight-role">RAG
+                Engineer</span>
+            </p>
+
+            <p class="hero-desc">
+              B.Tech in Computer Science at Vignan's Institute of IT (CGPA: 8.45). LeetCode Knight ,CodeChef 3-Star
+              with 1,700+ problems solved ,Specialist in codeforces & IEEE Vice Chair. Building high-precision
+              Retrieval-Augmented Generation (RAG) systems,
+              forensic facial AI models, and production web applications.
+            </p>
+
+            <div class="hero-action-row">
+              <a href="#projects" class="btn-primary-glow">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                </svg>
+                <span>Explore 3D Projects</span>
+              </a>
+              <button class="btn-secondary-glass" id="hero-resume-trigger">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                </svg>
+                <span>Verified Resume</span>
+              </button>
+              <a href="#contact" class="btn-secondary-glass">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                <span>Direct Mail</span>
+              </a>
+            </div>
+
+            <!-- Stats Ribbon -->
+            <div class="hero-stats-ribbon">
+              <div class="stat-box">
+                <span class="stat-number gold">1,700+</span>
+                <span class="stat-label">Problems Solved (DSA)</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-number cyan">Knight</span>
+                <span class="stat-label">LeetCode (Top 5%)</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-number purple">1700</span>
+                <span class="stat-label">CodeChef Peak Rating</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-number green">8.45</span>
+                <span class="stat-label">B.Tech CSE CGPA</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Danush Holographic Photo Deck -->
+          <div class="hero-visual-deck">
+            <div class="hologram-card" id="hero-holo-card">
+              <!-- Corner Crosshairs -->
+              <span class="corner-bracket top-left"></span>
+              <span class="corner-bracket top-right"></span>
+              <span class="corner-bracket bottom-left"></span>
+              <span class="corner-bracket bottom-right"></span>
+
+              <div class="photo-viewport">
+                <img src="/assets/danush_photo.jpg" alt="Kaviti Danush" class="danush-portrait" />
+                <div class="hologram-scanline"></div>
+                <div class="hologram-hud-tag">
+                  <div class="hud-location">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    <span>Visakhapatnam, Andhra Pradesh</span>
+                  </div>
+                  <div class="hud-role-pill">AI & FULL STACK</div>
+                </div>
+              </div>
+
+              <!-- Orbit Badges with Authentic Logos -->
+              <div class="orbit-badge top-right">
+                <span class="badge-icon" id="hero-badge-leetcode"></span>
+                <div>
+                  <div class="badge-text-title">LeetCode Knight</div>
+                  <div class="badge-text-sub">1,700+ Solved</div>
+                </div>
+              </div>
+
+              <div class="orbit-badge bottom-left">
+                <span class="badge-icon" id="hero-badge-ieee"></span>
+                <div>
+                  <div class="badge-text-title">IEEE Vice-Chair</div>
+                  <div class="badge-text-sub">Tech Leadership</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS & INTERACTIVE AI LAB -->
+    <section class="section-pad" id="projects">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-tag">Interactive AI Lab & Engineering</span>
+          <h2 class="section-title">Production Systems & Real-Time Simulators</h2>
+          <p class="section-desc">
+            Explore live interactive simulations of Danush's cutting-edge AI architectures. Test suspect face matching
+            via vector embeddings and test domain-specific RAG regulatory synthesis.
+          </p>
+        </div>
+
+        <div class="project-deck-grid">
+
+          <!-- PROJECT 1: AI Forensic Face Matching System -->
+          <div class="project-feature-card">
+
+            <!-- Left Info Pane -->
+            <div class="project-info-pane">
+              <div>
+                <span class="project-type-tag">Computer Vision • GenAI • Forensic Tech</span>
+                <h3 class="project-headline">AI-Powered Forensic Face Matching System</h3>
+                <p class="project-summary">
+                  A high-security forensic system that translates natural-language eyewitness descriptions into
+                  synthetic facial sketches and matches them against criminal records via 512-dimensional vector
+                  embeddings and Cosine Similarity.
+                </p>
+              </div>
+
+              <ul class="project-bullet-list">
+                <li>
+                  <span class="bullet-icon">▹</span>
+                  <span>Synthesizes suspect facial sketches from textual descriptions via Hugging Face Inference
+                    API.</span>
+                </li>
+                <li>
+                  <span class="bullet-icon">▹</span>
+                  <span>Extracts facial feature embeddings and computes multi-vector Cosine Similarity to identify
+                    closest matches.</span>
+                </li>
+                <li>
+                  <span class="bullet-icon">▹</span>
+                  <span>Engineered a full-stack JavaScript architecture with a ranked matching workflow returning Top-K
+                    potential suspects.</span>
+                </li>
+              </ul>
+
+              <div class="tech-stack-row">
+                <span class="tech-tag" data-icon="react">React.js</span>
+                <span class="tech-tag" data-icon="nodejs">Node.js</span>
+                <span class="tech-tag" data-icon="huggingface">Hugging Face API</span>
+                <span class="tech-tag" data-icon="faceEmbedding">Face Embeddings</span>
+                <span class="tech-tag" data-icon="vectordb">Cosine Similarity</span>
+                <span class="tech-tag" data-icon="javascript">JavaScript</span>
+              </div>
+            </div>
+
+            <!-- Right Interactive Simulator Pane -->
+            <div class="project-sim-pane">
+              <div class="sim-header">
+                <div class="sim-title-wrap">
+                  <span class="sim-icon" id="sim-icon-eye"></span>
+                  <span class="sim-title">Live Biometric Forensic Matcher</span>
+                </div>
+                <div class="live-indicator">
+                  <span class="pulse-circle"></span>
+                  <span>HF INFERENCE ACTIVE</span>
+                </div>
+              </div>
+
+              <div class="preset-chips-wrap">
+                <span class="preset-label">Select Witness Eyewitness Prompt:</span>
+                <div class="chips-row">
+                  <button class="face-preset-chip active"
+                    data-prompt="Male, 28-32 years old, sharp angular jawline, dark wavy hair, intense almond eyes, light stubble">
+                    Suspect A (Sharp Jawline, Wavy Hair)
+                  </button>
+                  <button class="face-preset-chip"
+                    data-prompt="Male, late 20s, oval face contour, short trimmed hair, high cheekbones, thin lips">
+                    Suspect B (Oval Face, Short Hair)
+                  </button>
+                  <button class="face-preset-chip"
+                    data-prompt="Male, 30-35 years old, square jaw, deep-set orbitals, slight asymmetry, cleft chin">
+                    Suspect C (Square Jaw, Cleft Chin)
+                  </button>
+                </div>
+              </div>
+
+              <div class="sim-input-box">
+                <textarea id="face-prompt-input" class="cyber-textarea"
+                  placeholder="Enter natural-language suspect description...">Male, 28-32 years old, sharp angular jawline, dark wavy hair, intense almond eyes, light stubble</textarea>
+                <button id="run-face-match" class="btn-cyber-run">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                  </svg>
+                  <span>Run Forensic Match</span>
+                </button>
+              </div>
+
+              <div id="face-pipeline-steps" class="pipeline-steps-wrap"></div>
+
+              <div id="face-match-results" class="sim-results-pane">
+                <!-- Loaded dynamically by demos.js with authentic vector biometric HUD -->
+              </div>
+            </div>
+
+          </div>
+
+          <!-- PROJECT 2: IP-SAKTI AI -->
+          <div class="project-feature-card">
+
+            <!-- Left Info Pane -->
+            <div class="project-info-pane">
+              <div>
+                <span class="project-type-tag">Generative AI • RAG • Legal & Regulatory Tech</span>
+                <h3 class="project-headline">IP-SAKTI AI (Ayurveda/AYUSH Guidance)</h3>
+                <p class="project-summary">
+                  A domain-specific intellectual property and regulatory intelligence system built for Ayurveda and
+                  AYUSH innovators using advanced Retrieval-Augmented Generation (RAG).
+                </p>
+              </div>
+
+              <ul class="project-bullet-list">
+                <li>
+                  <span class="bullet-icon">▹</span>
+                  <span>Developed a query classification and metadata-aware retrieval layer to filter and retrieve
+                    pertinent IP gazettes and statutes.</span>
+                </li>
+                <li>
+                  <span class="bullet-icon">▹</span>
+                  <span>Built a source-grounded LLM pipeline generating contextual answers with verified legal and
+                    scientific references.</span>
+                </li>
+                <li>
+                  <span class="bullet-icon">▹</span>
+                  <span>Engineered dynamic vector database synchronization enabling real-time knowledge-base updates
+                    without LLM retraining.</span>
+                </li>
+              </ul>
+
+              <div class="tech-stack-row">
+                <span class="tech-tag" data-icon="langchain">LangChain</span>
+                <span class="tech-tag" data-icon="rag">RAG Pipeline</span>
+                <span class="tech-tag" data-icon="llm">LLM</span>
+                <span class="tech-tag" data-icon="vectordb">Vector DB</span>
+                <span class="tech-tag" data-icon="javascript">Embeddings</span>
+              </div>
+            </div>
+
+            <!-- Right Interactive Simulator Pane -->
+            <div class="project-sim-pane">
+              <div class="sim-header">
+                <div class="sim-title-wrap">
+                  <span class="sim-icon" id="sim-icon-rag"></span>
+                  <span class="sim-title">Live AYUSH RAG Guidance Engine</span>
+                </div>
+                <div class="live-indicator">
+                  <span class="pulse-circle"></span>
+                  <span>RAG PIPELINE ACTIVE</span>
+                </div>
+              </div>
+
+              <div class="preset-chips-wrap">
+                <span class="preset-label">Choose Sample Regulatory Query:</span>
+                <select id="rag-query-select" class="cyber-select">
+                  <option value="patent_3p">Patentability of Poly-Herbal Formulations under Section 3(p) Patent Act
+                  </option>
+                  <option value="export_eu">AYUSH Premium Mark certification & EU Directive 2004/24/EC compliance for
+                    extracts</option>
+                  <option value="gmp_sched_t">Schedule T GMP compliance roadmap for Ayurvedic manufacturing facilities
+                  </option>
+                  <option value="custom">✍️ Type Custom Query...</option>
+                </select>
+                <input type="text" id="rag-custom-input" class="cyber-textarea"
+                  style="display:none; margin-top:8px; height:auto; padding:10px;"
+                  placeholder="Type custom Ayurveda patent or compliance inquiry..." />
+              </div>
+
+              <button id="run-rag-btn" class="btn-cyber-run" style="width: 100%; padding: 14px;">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                </svg>
+                <span>Execute RAG Guidance</span>
+              </button>
+
+              <div id="rag-metrics-wrap"></div>
+              <div id="rag-output-wrap">
+                <!-- Loaded dynamically by demos.js -->
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS & COMPETITIVE PROGRAMMING ARENA -->
+    <section class="section-pad" id="achievements">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-tag">Competitive Excellence & Leadership</span>
+          <h2 class="section-title">Algorithmic Mastery & Achievements</h2>
+          <p class="section-desc">
+            Proven track record of high-performance problem solving under time constraints, combined with community
+            leadership as IEEE Vice-Chair.
+          </p>
+        </div>
+
+        <div class="achieve-deck-grid">
+
+          <!-- Card 1: LeetCode Knight -->
+          <div class="achieve-card card-knight" id="card-knight"
+            onclick="window.open('https://leetcode.com/u/dan_ush_555/', '_blank')">
+            <div class="badge-hologram-seal" id="seal-leetcode"></div>
+            <h3 class="achieve-title">LeetCode Knight</h3>
+            <div class="achieve-metric">Top 5% Globally</div>
+            <p class="achieve-desc">
+              Awarded the prestigious Knight badge on LeetCode for consistent high performance across global weekly and
+              bi-weekly algorithmic contests.
+            </p>
+            <div class="achieve-tags">
+              <span class="tech-tag">Dynamic Programming</span>
+              <span class="tech-tag">Graph Algorithms</span>
+              <span class="tech-tag">Tree Recursion</span>
+            </div>
+          </div>
+
+          <!-- Card 2: CodeChef 3-Star -->
+          <div class="achieve-card card-codechef" id="card-codechef"
+            onclick="window.open('https://www.codechef.com/users/dan_ush_555', '_blank')">
+            <div class="badge-hologram-seal" id="seal-codechef"></div>
+            <h3 class="achieve-title">CodeChef 3-Star</h3>
+            <div class="achieve-metric">Peak Rating: 1700</div>
+            <p class="achieve-desc">
+              Achieved 1700 peak rating on CodeChef (Division 2 competitor), demonstrating rapid mathematical problem
+              modeling and low-latency implementation.
+            </p>
+            <div class="achieve-tags">
+              <span class="tech-tag">Number Theory</span>
+              <span class="tech-tag">Combinatorics</span>
+              <span class="tech-tag">Data Structures</span>
+            </div>
+          </div>
+
+          <!-- Card 3: IEEE Vice-Chair -->
+          <div class="achieve-card card-ieee" id="card-ieee">
+            <div class="badge-hologram-seal" id="seal-ieee"></div>
+            <h3 class="achieve-title">IEEE Vice-Chair</h3>
+            <div class="achieve-metric">SSC Club Lead</div>
+            <p class="achieve-desc">
+              Technical leadership and student mentorship across campus communities, organizing national hackathons,
+              coding workshops, and tech bootcamps.
+            </p>
+            <div class="achieve-tags">
+              <span class="tech-tag">Community Leadership</span>
+              <span class="tech-tag">Mentorship</span>
+              <span class="tech-tag">Hackathon Org</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 1,700+ Problems Solved Breakdown Deck -->
+        <div class="dsa-breakdown-card">
+          <div class="dsa-title-group">
+            <h4>1,700+ Algorithmic Problems Solved</h4>
+            <p>Across LeetCode, Codeforces, HackerRank, CodeStudio & CodeChef</p>
+          </div>
+
+          <div class="dsa-bars-row">
+            <div class="dsa-bar-item">
+              <div class="dsa-bar-label">
+                <span>DP & Greedy</span>
+                <span>92%</span>
+              </div>
+              <div class="dsa-track">
+                <div class="dsa-fill fill-dp"></div>
+              </div>
+            </div>
+
+            <div class="dsa-bar-item">
+              <div class="dsa-bar-label">
+                <span>Graphs & Trees</span>
+                <span>95%</span>
+              </div>
+              <div class="dsa-track">
+                <div class="dsa-fill fill-trees"></div>
+              </div>
+            </div>
+
+            <div class="dsa-bar-item">
+              <div class="dsa-bar-label">
+                <span>Advanced DS</span>
+                <span>88%</span>
+              </div>
+              <div class="dsa-track">
+                <div class="dsa-fill fill-graphs"></div>
+              </div>
+            </div>
+
+            <div class="dsa-bar-item">
+              <div class="dsa-bar-label">
+                <span>System Design</span>
+                <span>82%</span>
+              </div>
+              <div class="dsa-track">
+                <div class="dsa-fill fill-system"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS MATRIX -->
+    <section class="section-pad" id="skills">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-tag">Capabilities & Toolchain</span>
+          <h2 class="section-title">Technical Skills Matrix</h2>
+          <p class="section-desc">
+            A comprehensive overview of Danush's software development stack, machine learning libraries, databases, and
+            DevOps workflows.
+          </p>
+        </div>
+
+        <!-- Tabs Navigation with Authentic Vector SVGs -->
+        <div class="skills-tabs-nav">
+          <button class="skill-tab-btn active" data-category="all">
+            <span class="tab-svg-slot" id="tab-svg-all"></span>
+            <span>All Skills</span>
+          </button>
+          <button class="skill-tab-btn" data-category="ai">
+            <span class="tab-svg-slot" id="tab-svg-ai"></span>
+            <span>AI / GenAI</span>
+          </button>
+          <button class="skill-tab-btn" data-category="languages">
+            <span class="tab-svg-slot" id="tab-svg-languages"></span>
+            <span>Languages</span>
+          </button>
+          <button class="skill-tab-btn" data-category="frameworks">
+            <span class="tab-svg-slot" id="tab-svg-frameworks"></span>
+            <span>Frameworks</span>
+          </button>
+          <button class="skill-tab-btn" data-category="devops">
+            <span class="tab-svg-slot" id="tab-svg-devops"></span>
+            <span>Cloud & Tools</span>
+          </button>
+        </div>
+
+        <!-- Skills Grid Container -->
+        <div class="skills-grid-container" id="skills-grid">
+          <!-- Populated dynamically via JS with authentic official brand SVGs -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & EDUCATION JOURNEY TIMELINE -->
+    <section class="section-pad" id="journey">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-tag">Career & Academia</span>
+          <h2 class="section-title">Experience & Education Journey</h2>
+          <p class="section-desc">
+            Real-world software engineering internship experience backed by rigorous academic foundations in computer
+            science.
+          </p>
+        </div>
+
+        <div class="timeline-deck">
+
+          <!-- Column 1: Professional Experience (Career Route Map) -->
+          <div class="timeline-column">
+            <div class="timeline-col-header">
+              <div class="timeline-col-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="6" cy="6" r="3" />
+                  <circle cx="18" cy="18" r="3" />
+                  <line x1="8.5" y1="8.5" x2="15.5" y2="15.5" />
+                  <circle cx="18" cy="6" r="3" stroke-dasharray="2 2" />
+                  <line x1="8.5" y1="6" x2="15" y2="6" />
+                </svg>
+              </div>
+              <div class="route-header-text">
+                <h3>Work Experience Route Map</h3>
+                <span class="route-header-subtitle">CAREER TRANSIT LINE // 3 CONNECTED STATIONS</span>
+              </div>
+            </div>
+
+            <!-- Career Transit Route Spine & Stations -->
+            <div class="route-map-container">
+              <div class="route-map-track"></div>
+
+              <!-- STATION 1: Completed Milestone -->
+              <div class="route-station-item station-completed">
+                <div class="station-node">
+                  <span class="node-bullet">✓</span>
+                  <span class="node-halo"></span>
+                </div>
+                <div class="station-card">
+                  <div class="station-meta-bar">
+                    <span class="station-code">STATION 01 // COMPLETED MILESTONE</span>
+                    <span class="timeline-duration-badge">9th Feb 2026 – 9th March 2026</span>
+                  </div>
+                  <h4 class="timeline-role-title">Full Stack Python Web Developer</h4>
+                  <div class="timeline-org">Future Interns • Remote Software Engineering</div>
+                  <ul class="timeline-body-list">
+                    <li>Built and integrated high-throughput RESTful APIs and database operations to handle user
+                      authentication, session security, and CRUD functionalities.</li>
+                    <li>Designed and implemented responsive, modular frontend UI components using modern HTML5, CSS3,
+                      and JavaScript with asynchronous state synchronization.</li>
+                    <li>Employed Git for rigorous version control, branch management, pull request reviews, and agile
+                      sprint delivery.</li>
+                  </ul>
+                  <div class="tech-stack-row">
+                    <span class="tech-tag" data-icon="python">Python</span>
+                    <span class="tech-tag" data-icon="sql">RESTful APIs</span>
+                    <span class="tech-tag" data-icon="javascript">JavaScript</span>
+                    <span class="tech-tag" data-icon="git">Git & GitHub</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STATION 2: Current In-Transit Waypoint -->
+              <div class="route-station-item station-active">
+                <div class="station-node">
+                  <span class="node-bullet">⚡</span>
+                  <span class="node-halo pulsing"></span>
+                </div>
+                <div class="station-card">
+                  <div class="station-meta-bar">
+                    <span class="station-code cyan">STATION 02 // CURRENT IN-TRANSIT WAYPOINT</span>
+                    <span class="timeline-duration-badge active-badge">March 2026 – Present</span>
+                  </div>
+                  <h4 class="timeline-role-title">GenAI Systems & Algorithmic Specialist</h4>
+                  <div class="timeline-org">Autonomous AI Lab & Competitive Arena</div>
+                  <ul class="timeline-body-list">
+                    <li>Engineered source-grounded RAG architectures using LangChain, Vector DB embeddings, and citation
+                      grounding for high-precision retrieval.</li>
+                    <li>Developed biometric facial vector matching systems using Hugging Face models and 512-D Cosine
+                      distance computation.</li>
+                    <li>Achieved LeetCode Knight rating (Top 5% globally) with 1,700+ algorithmic problems solved across
+                      advanced DP and graph algorithms.</li>
+                  </ul>
+                  <div class="tech-stack-row">
+                    <span class="tech-tag" data-icon="rag">RAG Architecture</span>
+                    <span class="tech-tag" data-icon="langchain">LangChain</span>
+                    <span class="tech-tag" data-icon="faceEmbedding">Face Embeddings</span>
+                    <span class="tech-tag" data-icon="vectordb">Vector DB</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STATION 3: Next Step Journey (Keep Exploring) -->
+              <div class="route-station-item station-next">
+                <div class="station-node">
+                  <span class="node-bullet">✦</span>
+                  <span class="node-halo golden"></span>
+                </div>
+                <div class="station-card station-next-card">
+                  <div class="station-meta-bar">
+                    <span class="station-code gold">STATION 03 // KEEP EXPLORING NEXT STEP JOURNEY</span>
+                    <span class="timeline-duration-badge gold-badge">Summer 2026 & Beyond</span>
+                  </div>
+                  <h4 class="timeline-role-title">Software Engineering & AI Internships / Roles</h4>
+                  <div class="timeline-org">Global Tech Companies & High-Growth Startups</div>
+                  <p class="route-next-desc">
+                    Ready to bring production full-stack engineering, high-throughput API architecture, and
+                    state-of-the-art GenAI / RAG implementation to high-impact software engineering teams.
+                  </p>
+                  <div class="route-actions-row">
+                    <a href="#contact" class="btn-primary-glow btn-sm-route">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                      </svg>
+                      <span>Connect for Next Stop</span>
+                    </a>
+                    <a href="#terminal" class="btn-secondary-glass btn-sm-route">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <polyline points="4 17 10 11 4 5" />
+                        <line x1="12" y1="19" x2="20" y2="19" />
+                      </svg>
+                      <span>Open Route Terminal</span>
+                    </a>
+                  </div>
+                  <div class="route-badges-strip">
+                    <span class="route-status-pill">● READY FOR ONBOARDING</span>
+                    <span class="route-status-pill">● FULL-STACK + GENAI</span>
+                    <span class="route-status-pill">● IMMEDIATE INTERVIEW</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Column 2: Education (Academic Route Map) -->
+          <div class="timeline-column">
+            <div class="timeline-col-header">
+              <div class="timeline-col-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                  <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                </svg>
+              </div>
+              <div class="route-header-text">
+                <h3>Education Route Map</h3>
+                <span class="route-header-subtitle">ACADEMIC TRANSIT LINE // 3 CONNECTED STATIONS</span>
+              </div>
+            </div>
+
+            <!-- Academic Transit Route Spine & Stations -->
+            <div class="route-map-container">
+              <div class="route-map-track"></div>
+
+              <!-- STATION 1: Senior Secondary / Foundation Waypoint -->
+              <div class="route-station-item station-completed">
+                <div class="station-node">
+                  <span class="node-bullet">✓</span>
+                  <span class="node-halo"></span>
+                </div>
+                <div class="station-card">
+                  <div class="station-meta-bar">
+                    <span class="station-code">STATION 01 // FOUNDATION WAYPOINT</span>
+                    <span class="timeline-duration-badge">2022 – 2024</span>
+                  </div>
+                  <h4 class="timeline-role-title">Higher Secondary Education (MPC / STEM)</h4>
+                  <div class="timeline-org">Board of Intermediate Education • MPC Foundations</div>
+                  <div class="education-meta-stats">
+                    <div class="edu-stat-chip">
+                      <span>Stream:</span> <strong style="color:var(--emerald);">Maths, Physics, Chem</strong>
+                    </div>
+                    <div class="edu-stat-chip">
+                      <span>Focus:</span> <strong>Analytical Foundations</strong>
+                    </div>
+                  </div>
+                  <ul class="timeline-body-list" style="margin-top: 6px;">
+                    <li>Built rigorous mathematical foundations in calculus, coordinate geometry, discrete logic, and
+                      physical modeling.</li>
+                    <li>Developed core logical problem-solving frameworks that transitioned seamlessly into computer
+                      algorithms and data structures.</li>
+                    <li>Explored early programming fundamentals in C and Python, mastering loops, memory pointers, and
+                      structured control flow.</li>
+                  </ul>
+                  <div class="tech-stack-row">
+                    <span class="tech-tag" data-icon="c">C Language</span>
+                    <span class="tech-tag" data-icon="python">Python</span>
+                    <span class="tech-tag">Calculus & Logic</span>
+                    <span class="tech-tag">Discrete Math</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STATION 2: Current Undergraduate Station -->
+              <div class="route-station-item station-active">
+                <div class="station-node">
+                  <span class="node-bullet">⚡</span>
+                  <span class="node-halo pulsing"></span>
+                </div>
+                <div class="station-card">
+                  <div class="station-meta-bar">
+                    <span class="station-code cyan">STATION 02 // CURRENT ACADEMIC STATION</span>
+                    <span class="timeline-duration-badge active-badge">2024 – 2028 (Present)</span>
+                  </div>
+                  <h4 class="timeline-role-title">Bachelor of Technology (B.Tech)</h4>
+                  <div class="timeline-org">Vignan’s Institute of Information Technology • Computer Science</div>
+                  <div class="education-meta-stats">
+                    <div class="edu-stat-chip">
+                      <span>Cumulative CGPA:</span> <strong style="color:var(--emerald);">8.45 / 10</strong>
+                    </div>
+                    <div class="edu-stat-chip">
+                      <span>Major:</span> <strong>Computer Science & Eng</strong>
+                    </div>
+                  </div>
+                  <ul class="timeline-body-list" style="margin-top: 6px;">
+                    <li>Core coursework: Data Structures & Algorithms, Database Management Systems (DBMS), Operating
+                      Systems, Computer Networks, and Theory of Computation.</li>
+                    <li>Elected <strong>IEEE Vice-Chair</strong> and <strong>SSC Club Lead</strong>, facilitating peer
+                      problem-solving circles, tech workshops, and campus hackathons.</li>
+                    <li>Merged theoretical rigor with high-performance engineering — maintaining academic excellence
+                      while solving 1,700+ competitive algorithmic challenges.</li>
+                  </ul>
+                  <div class="tech-stack-row">
+                    <span class="tech-tag" data-icon="sql">DBMS & SQL</span>
+                    <span class="tech-tag" data-icon="java">Java</span>
+                    <span class="tech-tag" data-icon="ieee">IEEE Leadership</span>
+                    <span class="tech-tag">Data Structures & OS</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STATION 3: Next Destination (Next Journey Starts Soon) -->
+              <div class="route-station-item station-next">
+                <div class="station-node">
+                  <span class="node-bullet">✦</span>
+                  <span class="node-halo golden"></span>
+                </div>
+                <div class="station-card station-next-card">
+                  <div class="station-meta-bar">
+                    <span class="station-code gold">STATION 03 // NEXT DESTINATION WAYPOINT</span>
+                    <span class="timeline-duration-badge gold-badge">Horizon 2028 & Beyond</span>
+                  </div>
+                  <h4 class="timeline-role-title">Next Journey Starts Soon .</h4>
+                  <div class="timeline-org">Advanced AI Research, Master's Horizons & Continuous Mastery</div>
+                  <p class="route-next-desc">
+                    Targeting advanced academic research and graduate specializations in Generative AI architectures,
+                    high-performance distributed systems, and autonomous agentic reasoning — translating theoretical
+                    frontiers into scalable real-world intelligence.
+                  </p>
+                  <div class="route-actions-row">
+                    <a href="#contact" class="btn-primary-glow btn-sm-route">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                      </svg>
+                      <span>Connect for Research & Study</span>
+                    </a>
+                    <a href="#terminal" class="btn-secondary-glass btn-sm-route">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <polyline points="4 17 10 11 4 5" />
+                        <line x1="12" y1="19" x2="20" y2="19" />
+                      </svg>
+                      <span>Query Academic Roadmap</span>
+                    </a>
+                  </div>
+                  <div class="route-badges-strip">
+                    <span class="route-status-pill">● NEXT JOURNEY STARTS SOON</span>
+                    <span class="route-status-pill">● GENAI RESEARCH</span>
+                    <span class="route-status-pill">● DISTRIBUTED SYSTEMS</span>
+                    <span class="route-status-pill">● MASTER'S ASPIRANT</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INTERACTIVE CYBER TERMINAL "DANUSH-OS" -->
+    <section class="section-pad" id="terminal">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-tag">Interactive CLI</span>
+          <h2 class="section-title">DanushOS Cyber Terminal</h2>
+          <p class="section-desc">
+            Prefer the command line? Run commands or click quick action buttons below to query Danush's resume, tech
+            stack, and background in real-time.
+          </p>
+        </div>
+
+        <div class="terminal-card">
+          <div class="terminal-header">
+            <div class="term-controls">
+              <span class="term-dot red"></span>
+              <span class="term-dot yellow"></span>
+              <span class="term-dot green"></span>
+            </div>
+            <span class="term-title">danush@neural-box: ~ (zsh)</span>
+            <span class="term-badge">v2.6 ACTIVE</span>
+          </div>
+
+          <div class="terminal-body" id="terminal-body">
+            <div class="term-line">
+              <span class="term-prompt">guest@danush-os:~$</span> <span class="term-cmd">danush --welcome</span>
+            </div>
+            <div class="term-line">
+              Welcome to <strong>DanushOS</strong> v2.6. Type <span class="cmd-hl">help</span> to explore or click quick
+              shortcuts below.
+            </div>
+          </div>
+
+          <div class="term-quick-chips">
+            <button class="term-quick-btn" data-cmd="bio">bio</button>
+            <button class="term-quick-btn" data-cmd="skills">skills</button>
+            <button class="term-quick-btn" data-cmd="projects">projects</button>
+            <button class="term-quick-btn" data-cmd="achievements">achievements</button>
+            <button class="term-quick-btn" data-cmd="exp">exp</button>
+            <button class="term-quick-btn" data-cmd="contact">contact</button>
+            <button class="term-quick-btn" data-cmd="resume">resume</button>
+            <button class="term-quick-btn" data-cmd="hire">hire danush</button>
+            <button class="term-quick-btn" data-cmd="clear">clear</button>
+          </div>
+
+          <div class="terminal-input-row">
+            <span class="term-prompt">guest@danush-os:~$</span>
+            <input type="text" id="terminal-input" class="terminal-input"
+              placeholder="Type command (e.g. skills, projects, hire)..." autocomplete="off" spellcheck="false" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT DECK & PROFILES (DIRECT EMAIL INTEGRATION) -->
+    <section class="section-pad" id="contact">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-tag">Direct Communication</span>
+          <h2 class="section-title">Let's Build Something Extraordinary</h2>
+          <p class="section-desc">
+            Seeking high-impact full-stack and GenAI engineering roles, internships, or technical collaborations. Every
+            message sent below delivers straight to Danush's primary email.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+
+          <!-- Left Column: Direct Contact Info & Profiles -->
+          <div class="contact-info-panel">
+            <h3 class="contact-headline">Available for Internships & Full-Time Roles</h3>
+            <p class="contact-desc">
+              Based in Visakhapatnam, Andhra Pradesh. Open to on-site, hybrid, and remote opportunities across India and
+              globally.
+            </p>
+
+            <div class="contact-cards-stack">
+
+              <!-- Email Card -->
+              <div class="contact-card-item" id="copy-email-card" data-copy="danushkaviti@gmail.com">
+                <div class="contact-card-left">
+                  <div class="contact-icon-box" id="contact-icon-mail"></div>
+                  <div>
+                    <div class="contact-card-label">Email Address</div>
+                    <div class="contact-card-val">danushkaviti@gmail.com</div>
+                  </div>
+                </div>
+                <span class="btn-copy-chip">Click to Copy</span>
+              </div>
+
+              <!-- Phone Card -->
+              <div class="contact-card-item" id="copy-phone-card" data-copy="+917794039459">
+                <div class="contact-card-left">
+                  <div class="contact-icon-box" id="contact-icon-phone"></div>
+                  <div>
+                    <div class="contact-card-label">Direct Phone</div>
+                    <div class="contact-card-val">+91 7794039459</div>
+                  </div>
+                </div>
+                <span class="btn-copy-chip">Click to Copy</span>
+              </div>
+
+              <!-- Location Card -->
+              <div class="contact-card-item">
+                <div class="contact-card-left">
+                  <div class="contact-icon-box">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="contact-card-label">Current Location</div>
+                    <div class="contact-card-val">Visakhapatnam, Andhra Pradesh</div>
+                  </div>
+                </div>
+                <span class="btn-copy-chip">IST (UTC+5:30)</span>
+              </div>
+
+            </div>
+
+            <!-- Social Profiles Cluster with Authentic Official Logos -->
+            <div>
+              <span class="contact-card-label" style="display:block; margin-bottom:12px;">Verified Profiles & Coding
+                Handles:</span>
+              <div class="socials-cluster">
+                <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-pill" id="soc-linkedin">
+                  <span class="soc-logo-slot"></span> LinkedIn
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener" class="social-pill" id="soc-github">
+                  <span class="soc-logo-slot"></span> GitHub
+                </a>
+                <a href="https://leetcode.com" target="_blank" rel="noopener" class="social-pill" id="soc-leetcode">
+                  <span class="soc-logo-slot"></span> LeetCode
+                </a>
+                <a href="https://codechef.com" target="_blank" rel="noopener" class="social-pill" id="soc-codechef">
+                  <span class="soc-logo-slot"></span> CodeChef
+                </a>
+                <a href="https://codeforces.com" target="_blank" rel="noopener" class="social-pill" id="soc-codeforces">
+                  <span class="soc-logo-slot"></span> Codeforces
+                </a>
+                <a href="https://hackerrank.com" target="_blank" rel="noopener" class="social-pill" id="soc-hackerrank">
+                  <span class="soc-logo-slot"></span> HackerRank
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Interactive Real Email Dispatch Form -->
+          <div class="contact-form-card">
+            <div class="form-header-row">
+              <h3
+                style="font-family: var(--font-display); font-size: 1.45rem; font-weight:800; color:var(--text-highlight);">
+                Send a Direct Message
+              </h3>
+              <span class="badge-direct-mail">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Delivers to danushkaviti@gmail.com
+              </span>
+            </div>
+
+            <form id="contact-form">
+              <!-- Honeypot for spam bot prevention -->
+              <input type="text" name="_honey" style="display:none">
+
+              <div class="form-group">
+                <label class="form-label" for="contact-name">Your Full Name</label>
+                <input type="text" id="contact-name" name="name" class="form-input"
+                  placeholder="e.g. Sarah Connor / Engineering Director" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-email">Your Work Email</label>
+                <input type="email" id="contact-email" name="email" class="form-input"
+                  placeholder="recruiter@techcompany.com" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-subject">Subject</label>
+                <input type="text" id="contact-subject" name="subject" class="form-input"
+                  placeholder="Job Opportunity / Internship Interview / Project" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-msg">Message</label>
+                <textarea id="contact-msg" name="message" class="form-textarea"
+                  placeholder="Hi Danush, we reviewed your 3D portfolio and would love to schedule an interview..."
+                  required></textarea>
+              </div>
+
+              <button type="submit" id="btn-submit-form" class="btn-primary-glow"
+                style="width: 100%; justify-content: center; padding: 15px;">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13" />
+                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                </svg>
+                <span>Dispatch Message to Danush</span>
+              </button>
+
+              <div class="direct-mail-fallback">
+                <span>Or open directly in your mail app:</span>
+                <a href="mailto:danushkaviti@gmail.com?subject=Opportunity%20for%20Danush&body=Hi%20Danush,"
+                  class="mail-fallback-link" id="direct-mailto-link">
+                  Launch Mail Client ✉️
+                </a>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-copy">
+          Designed & Engineered by <strong>Kaviti Danush</strong> © 2026. Built with Three.js, WebGL & Vanilla CSS.
+        </div>
+        <div class="brand-sub">
+          VISAKHAPATNAM • INDIA
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- RESUME PREVIEW & DOWNLOAD MODAL -->
+  <div class="modal-backdrop" id="resume-modal">
+    <div class="resume-modal-dialog">
+      <div class="resume-modal-header">
+        <div class="resume-modal-title">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+          </svg>
+          <span>Kaviti Danush — Official Resume</span>
+        </div>
+        <div class="modal-header-actions">
+          <a href="/assets/danush_resume.pdf" download="Kaviti_Danush_Resume.pdf" class="btn-nav-cta"
+            id="download-resume-btn">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            <span>Download PDF</span>
+          </a>
+          <button class="btn-close-modal" id="close-resume-modal">✕</button>
+        </div>
+      </div>
+      <div class="resume-modal-body">
+        <iframe src="/assets/danush_resume.pdf" class="resume-iframe" title="Kaviti Danush Resume"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- UPCOMING BREAKTHROUGH FEATURES MODAL (Personal RAG + AI Navigation) -->
+  <div class="modal-backdrop" id="upcoming-features-modal">
+    <div class="feature-modal-dialog">
+      <div class="resume-modal-header">
+        <div class="resume-modal-title">
+          <span style="font-size: 1.25rem;">✨</span>
+          <span>Upcoming Innovations — Danush Portfolio v2.0</span>
+        </div>
+        <div class="modal-header-actions">
+          <span class="pill-wip-badge">🛠️ STILL WORKING • ACTIVE SPRINT</span>
+          <button class="btn-close-modal" id="close-feature-modal" title="Close Preview">✕</button>
+        </div>
+      </div>
+
+      <div class="feature-modal-body">
+
+        <div class="feature-modal-intro">
+          <h3>Architecting the Next Evolution of AI Portfolio Interfaces</h3>
+          <p>
+            Kaviti Danush is actively engineering two breakthrough system modules to transform this showcase into an
+            intelligent, interactive personal AI agent and voice-driven spatial computing experience.
+          </p>
+        </div>
+
+        <div class="upcoming-cards-grid">
+
+          <!-- FEATURE 1: Personal RAG Model -->
+          <div class="upcoming-feature-card">
+            <div class="card-status-strip">
+              <span class="feature-badge-rag">GENAI &amp; RAG ENGINE</span>
+              <span class="progress-pill">85% TRAINED</span>
+            </div>
+            <div class="feature-card-header">
+              <div class="feature-icon-avatar rag-avatar">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none">
+                  <rect x="2" y="3" width="7" height="6" rx="1.5" stroke="#00F5A0" stroke-width="1.8"
+                    fill="rgba(0, 245, 160, 0.15)" />
+                  <rect x="2" y="15" width="7" height="6" rx="1.5" stroke="#00F5A0" stroke-width="1.8"
+                    fill="rgba(0, 245, 160, 0.15)" />
+                  <circle cx="18" cy="12" r="4.5" stroke="#00F2FE" stroke-width="1.8" fill="rgba(0, 242, 254, 0.2)" />
+                  <path d="M9 6h4l2 3M9 18h4l2-3" stroke="#00F5A0" stroke-width="1.5" stroke-linecap="round" />
+                  <path d="M16 12h4M18 10v4" stroke="#00F2FE" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="feature-card-title">Personal RAG Model</h4>
+                <span class="feature-card-sub">Domain-Fine-Tuned Retrieval &amp; Neural Q&amp;A</span>
+              </div>
+            </div>
+
+            <p class="feature-card-desc">
+              A private, grounded Retrieval-Augmented Generation assistant fine-tuned on Danush's software
+              architectures, GitHub repositories, and verified engineering resume. Recruiters and engineers will be able
+              to query specific DSA complexities, design trade-offs, and system benchmarks with instant source-level
+              citations.
+            </p>
+
+            <div class="feature-specs-list">
+              <div class="spec-row">
+                <span class="spec-label">Vector Store:</span>
+                <span class="spec-val">ChromaDB + Pinecone Hybrid Index</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Embeddings:</span>
+                <span class="spec-val">OpenAI text-embedding-3-small + Hugging Face</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Grounding:</span>
+                <span class="spec-val">100% Hallucination Guardrails &amp; Code Citations</span>
+              </div>
+            </div>
+
+            <div class="feature-progress-track">
+              <div class="feature-progress-fill fill-green" style="width: 85%;"></div>
+            </div>
+          </div>
+
+          <!-- FEATURE 2: Autonomous AI Navigation System -->
+          <div class="upcoming-feature-card">
+            <div class="card-status-strip">
+              <span class="feature-badge-nav">VOICE &amp; SPATIAL COMPUTING</span>
+              <span class="progress-pill">75% CALIBRATED</span>
+            </div>
+            <div class="feature-card-header">
+              <div class="feature-icon-avatar nav-avatar">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#00F2FE" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                  <line x1="12" y1="19" x2="12" y2="23" />
+                  <line x1="8" y1="23" x2="16" y2="23" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="feature-card-title">Autonomous AI Navigation System</h4>
+                <span class="feature-card-sub">Voice-Controlled 3D UI &amp; Natural Language Dispatch</span>
+              </div>
+            </div>
+
+            <p class="feature-card-desc">
+              A hands-free autonomous conversational navigator powered by Web Speech API and spatial camera
+              interpolation. Speak natural commands such as <em>"Danush, show me your AI forensic face matcher"</em> or
+              <em>"Teleport to the career route map"</em>, and the 3D camera smoothly flies to the section while
+              executing live interactions.
+            </p>
+
+            <div class="feature-specs-list">
+              <div class="spec-row">
+                <span class="spec-label">Voice Pipeline:</span>
+                <span class="spec-val">Real-time Web Speech Recognition + Neural TTS</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Camera Kinetics:</span>
+                <span class="spec-val">Three.js 6-DOF Spline Trajectory Interpolation</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Intent Engine:</span>
+                <span class="spec-val">Contextual Natural Language Command Parser</span>
+              </div>
+            </div>
+
+            <div class="feature-progress-track">
+              <div class="feature-progress-fill fill-cyan" style="width: 75%;"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="feature-modal-footer">
+          <div class="footer-wip-note">
+            <span class="pulse-point"></span>
+            <span>Currently under active development in Danush's AI lab. Expected deployment in next release.</span>
+          </div>
+          <button class="btn-primary-glow" id="btn-register-waitlist">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+              <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+            </svg>
+            <span>Notify Me on Deployment 🚀</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container"></div>
+
+  <!-- Main JS Script -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
