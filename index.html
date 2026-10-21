@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Kaviti Danush | 3D Interactive Portfolio — Full Stack Developer& AI Engineer(RAG)</title>
   <meta name="description"
     content="Portfolio of Kaviti Danush — Full Stack Web Developer, AI RAG Engineer, LeetCode Knight, and CodeChef 3-Star with 1,700+ problems solved." />
@@ -20,7 +20,7 @@
 
 <body class="intro-active">
   <!-- INITIAL CYBER PORTAL GATE (Website does NOT render until flash beam ignites) -->
-  <div class="portal-gate" id="portal-gate" role="button" tabindex="0" title="Click anywhere or press Enter to launch">
+  <div class="portal-gate" id="portal-gate" role="button" tabindex="0" title="Click or tap anywhere or press Enter to launch">
     <div class="portal-particles-layer"></div>
     <div class="portal-reactor-wrap">
       <div class="portal-ring ring-outer"></div>
@@ -57,7 +57,7 @@
       </button>
 
       <div class="portal-click-prompt">
-        <span>⚡ Click anywhere on screen or press Enter to trigger quantum flash &amp; audio</span>
+        <span>⚡ Tap anywhere on screen or click button to trigger quantum flash &amp; audio</span>
       </div>
     </div>
   </div>
@@ -167,11 +167,152 @@
             <line x1="16" y1="17" x2="8" y2="17" />
             <polyline points="10 9 9 9 8 9" />
           </svg>
-          <span>Resume</span>
+          <span class="btn-nav-cta-text">Resume</span>
+        </button>
+
+        <!-- Cyber Mobile Menu Hamburger Button -->
+        <button class="btn-mobile-menu" id="mobile-menu-btn" aria-label="Toggle Cyber Navigation Menu" title="Open Navigation Menu">
+          <span class="hamburger-line top"></span>
+          <span class="hamburger-line mid"></span>
+          <span class="hamburger-line bot"></span>
         </button>
       </div>
     </nav>
   </header>
+
+  <!-- CYBER MOBILE NAVIGATION DRAWER & GLASS OVERLAY -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true">
+    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+      <div class="mobile-drawer-header">
+        <a href="#hero" class="brand-badge mobile-drawer-brand">
+          <div class="brand-symbol">
+            <svg viewBox="0 0 32 32" width="20" height="20" fill="none">
+              <path d="M6 6L16 2L26 6L26 26L16 30L6 26Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" />
+              <path d="M11 11L16 14L21 11M16 14V22" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">DANUSH</span>
+            <span class="brand-sub">QUANTUM HUD // MENU</span>
+          </div>
+        </a>
+        <button class="btn-close-drawer" id="close-mobile-menu" aria-label="Close Navigation Menu">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="mobile-drawer-status">
+        <span class="beacon-pulse"></span>
+        <span>NEURAL PORTAL ONLINE // SELECT DESTINATION</span>
+      </div>
+
+      <nav class="mobile-drawer-nav">
+        <ul class="mobile-nav-links">
+          <li>
+            <a href="#hero" class="mobile-nav-link" data-target="hero">
+              <span class="mobile-link-badge">01</span>
+              <span class="mobile-link-text">Core &amp; Overview</span>
+              <span class="mobile-link-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="#projects" class="mobile-nav-link" data-target="projects">
+              <span class="mobile-link-badge">02</span>
+              <span class="mobile-link-text">Projects &amp; AI Lab</span>
+              <span class="mobile-link-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="#achievements" class="mobile-nav-link" data-target="achievements">
+              <span class="mobile-link-badge">03</span>
+              <span class="mobile-link-text">Achievements &amp; Ratings</span>
+              <span class="mobile-link-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="#skills" class="mobile-nav-link" data-target="skills">
+              <span class="mobile-link-badge">04</span>
+              <span class="mobile-link-text">Technical Skills Matrix</span>
+              <span class="mobile-link-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="#journey" class="mobile-nav-link" data-target="journey">
+              <span class="mobile-link-badge">05</span>
+              <span class="mobile-link-text">Journey &amp; Education</span>
+              <span class="mobile-link-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="#terminal" class="mobile-nav-link" data-target="terminal">
+              <span class="mobile-link-badge">06</span>
+              <span class="mobile-link-text">DanushOS Terminal</span>
+              <span class="mobile-link-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contact" class="mobile-nav-link" data-target="contact">
+              <span class="mobile-link-badge">07</span>
+              <span class="mobile-link-text">Contact &amp; Connect</span>
+              <span class="mobile-link-arrow">→</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="mobile-drawer-divider"></div>
+
+      <!-- Mobile Holographic Palette Selector -->
+      <div class="mobile-palette-section">
+        <span class="mobile-section-label">HOLOGRAPHIC ACCENT PALETTE:</span>
+        <div class="mobile-palette-grid">
+          <button class="mobile-palette-btn active" data-palette="green" style="--dot-color: #00f5a0;">
+            <span class="palette-swatch" style="background:#00f5a0;"></span>
+            <span>Emerald</span>
+          </button>
+          <button class="mobile-palette-btn" data-palette="purple" style="--dot-color: #c084fc;">
+            <span class="palette-swatch" style="background:#c084fc;"></span>
+            <span>Violet</span>
+          </button>
+          <button class="mobile-palette-btn" data-palette="cyan" style="--dot-color: #00f2fe;">
+            <span class="palette-swatch" style="background:#00f2fe;"></span>
+            <span>Cyan</span>
+          </button>
+          <button class="mobile-palette-btn" data-palette="gold" style="--dot-color: #fbbf24;">
+            <span class="palette-swatch" style="background:#fbbf24;"></span>
+            <span>Amber</span>
+          </button>
+          <button class="mobile-palette-btn" data-palette="crimson" style="--dot-color: #ff3366;">
+            <span class="palette-swatch" style="background:#ff3366;"></span>
+            <span>Crimson</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Action Controls -->
+      <div class="mobile-drawer-bottom">
+        <button class="btn-primary-glow btn-mobile-resume" id="drawer-resume-btn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+          </svg>
+          <span>View &amp; Download Resume</span>
+        </button>
+        <button class="btn-secondary-glass btn-mobile-audio" id="drawer-audio-btn">
+          <div class="audio-bars">
+            <div class="audio-bar"></div>
+            <div class="audio-bar"></div>
+            <div class="audio-bar"></div>
+          </div>
+          <span id="drawer-audio-status">Audio FX: ON</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- Main Content Wrapper -->
   <div class="content-wrapper">
@@ -312,7 +453,8 @@
         <div class="project-deck-grid">
 
           <!-- PROJECT 1: AI Forensic Face Matching System -->
-          <div class="project-feature-card">
+          <div class="project-feature-card"
+            onclick="window.open('https://github.com/danushkaviti-tech/intellisketch', '_blank');">
 
             <!-- Left Info Pane -->
             <div class="project-info-pane">
@@ -406,7 +548,8 @@
           </div>
 
           <!-- PROJECT 2: IP-SAKTI AI -->
-          <div class="project-feature-card">
+          <div class="project-feature-card"
+            onclick="window.open('https://github.com/danushkaviti-tech/IP-Shakthi-Shayak', '_blank');">
 
             <!-- Left Info Pane -->
             <div class="project-info-pane">
@@ -637,6 +780,10 @@
           <button class="skill-tab-btn" data-category="ai">
             <span class="tab-svg-slot" id="tab-svg-ai"></span>
             <span>AI / GenAI</span>
+          </button>
+          <button class="skill-tab-btn" data-category="architecture">
+            <span class="tab-svg-slot" id="tab-svg-architecture"></span>
+            <span>Architecture & Design</span>
           </button>
           <button class="skill-tab-btn" data-category="languages">
             <span class="tab-svg-slot" id="tab-svg-languages"></span>
@@ -1078,22 +1225,28 @@
               <span class="contact-card-label" style="display:block; margin-bottom:12px;">Verified Profiles & Coding
                 Handles:</span>
               <div class="socials-cluster">
-                <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-pill" id="soc-linkedin">
+                <a href="https://www.linkedin.com/in/kaviti-danush-180095325/" target="_blank" rel="noopener"
+                  class="social-pill" id="soc-linkedin">
                   <span class="soc-logo-slot"></span> LinkedIn
                 </a>
-                <a href="https://github.com" target="_blank" rel="noopener" class="social-pill" id="soc-github">
+                <a href="https://github.com/danushkaviti-tech" target="_blank" rel="noopener" class="social-pill"
+                  id="soc-github">
                   <span class="soc-logo-slot"></span> GitHub
                 </a>
-                <a href="https://leetcode.com" target="_blank" rel="noopener" class="social-pill" id="soc-leetcode">
+                <a href="https://leetcode.com/u/dan_ush_555/" target="_blank" rel="noopener" class="social-pill"
+                  id="soc-leetcode">
                   <span class="soc-logo-slot"></span> LeetCode
                 </a>
-                <a href="https://codechef.com" target="_blank" rel="noopener" class="social-pill" id="soc-codechef">
+                <a href="https://www.codechef.com/users/dan_ush_555" target="_blank" rel="noopener" class="social-pill"
+                  id="soc-codechef">
                   <span class="soc-logo-slot"></span> CodeChef
                 </a>
-                <a href="https://codeforces.com" target="_blank" rel="noopener" class="social-pill" id="soc-codeforces">
+                <a href="https://codeforces.com/profile/danushkaviti" target="_blank" rel="noopener" class="social-pill"
+                  id="soc-codeforces">
                   <span class="soc-logo-slot"></span> Codeforces
                 </a>
-                <a href="https://hackerrank.com" target="_blank" rel="noopener" class="social-pill" id="soc-hackerrank">
+                <a href="https://www.hackerrank.com/profile/danushkaviti" target="_blank" rel="noopener"
+                  class="social-pill" id="soc-hackerrank">
                   <span class="soc-logo-slot"></span> HackerRank
                 </a>
               </div>

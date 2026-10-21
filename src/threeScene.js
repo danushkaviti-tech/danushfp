@@ -83,7 +83,18 @@ export class ThreeScene {
     // 6. Event Listeners
     window.addEventListener('resize', this.onResize.bind(this));
     window.addEventListener('mousemove', this.onMouseMove.bind(this));
+    window.addEventListener('touchmove', (e) => {
+      if (e.touches && e.touches[0]) {
+        const x = (e.touches[0].clientX / window.innerWidth) * 2 - 1;
+        const y = -(e.touches[0].clientY / window.innerHeight) * 2 + 1;
+        this.targetMouse.x = x * 0.4;
+        this.targetMouse.y = y * 0.4;
+      }
+    }, { passive: true });
     window.addEventListener('scroll', this.onScroll.bind(this), { passive: true });
+
+    // Initial responsive setup
+    this.onResize();
 
     // 7. Start Loop
     this.animate();
@@ -249,10 +260,12 @@ export class ThreeScene {
       { name: 'Python', color: 0x38bdf8, size: 0.55, pos: [-4, 3, 0] },
       { name: 'GenAI & RAG', color: 0x00f5a0, size: 0.65, pos: [0, 4, 1] },
       { name: 'React.js', color: 0x61dafb, size: 0.5, pos: [4, 3, -1] },
-      { name: 'LangChain', color: 0x10b981, size: 0.55, pos: [-3, 0, 2] },
+      { name: 'LangChain & LangGraph', color: 0x10b981, size: 0.58, pos: [-3, 0, 2] },
       { name: 'Node.js', color: 0x22c55e, size: 0.5, pos: [2, 0, 1] },
+      { name: 'System Architecture', color: 0x06b6d4, size: 0.62, pos: [1, -2, -2] },
       { name: 'Face Embeddings', color: 0xa855f7, size: 0.55, pos: [5, -2, 0] },
       { name: 'Vector DBs', color: 0xf43f5e, size: 0.5, pos: [-5, -2, 1] },
+      { name: 'Redis Cache', color: 0xdc2626, size: 0.52, pos: [-2, -4, 2] },
       { name: 'Docker & AWS', color: 0x0ea5e9, size: 0.45, pos: [-1, -3, -1] },
       { name: 'LeetCode Knight', color: 0xf59e0b, size: 0.65, pos: [0, -1, 3] },
       { name: 'MongoDB & SQL', color: 0x14b8a6, size: 0.5, pos: [3, -4, 0] }

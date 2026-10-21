@@ -9,34 +9,40 @@ import confetti from 'canvas-confetti';
 // Technical Skills Database from Danush's Resume with Authentic Vector Brand Icons
 const SKILLS_DATA = [
   // AI & GenAI
-  { name: 'RAG Architecture', cat: 'ai', iconKey: 'rag', level: 95, notes: 'Vector DB routing, metadata retrieval, citation grounding' },
-  { name: 'LLMs & Prompt Eng.', cat: 'ai', iconKey: 'llm', level: 92, notes: 'System prompt design, few-shot prompting, output parsing' },
-  { name: 'Face Embeddings', cat: 'ai', iconKey: 'faceEmbedding', level: 90, notes: '512-D tensor representations, Cosine distance matching' },
-  { name: 'Vector Databases', cat: 'ai', iconKey: 'vectordb', level: 88, notes: 'Chroma, FAISS, Pinecone index optimization' },
-  { name: 'Hugging Face API', cat: 'ai', iconKey: 'huggingface', level: 90, notes: 'Inference endpoints, diffusion models, embeddings' },
-  { name: 'LangChain', cat: 'ai', iconKey: 'langchain', level: 94, notes: 'Chains, agents, document loaders, custom retrievers' },
+  { name: 'RAG Architecture', cat: 'ai', cats: ['ai', 'architecture'], iconKey: 'rag', level: 95, notes: 'Vector DB routing, metadata retrieval, citation grounding' },
+  { name: 'LangGraph', cat: 'ai', cats: ['ai', 'frameworks', 'architecture'], iconKey: 'langgraph', level: 93, notes: 'Multi-agent state machines, cyclical graphs, human-in-the-loop & tool routing' },
+  { name: 'LLMs & Prompt Eng.', cat: 'ai', cats: ['ai'], iconKey: 'llm', level: 92, notes: 'System prompt design, few-shot prompting, output parsing' },
+  { name: 'LangChain', cat: 'ai', cats: ['ai', 'frameworks'], iconKey: 'langchain', level: 94, notes: 'Chains, agents, document loaders, custom retrievers' },
+  { name: 'Face Embeddings', cat: 'ai', cats: ['ai'], iconKey: 'faceEmbedding', level: 90, notes: '512-D tensor representations, Cosine distance matching' },
+  { name: 'Vector Databases', cat: 'ai', cats: ['ai'], iconKey: 'vectordb', level: 88, notes: 'Chroma, FAISS, Pinecone index optimization' },
+  { name: 'Hugging Face API', cat: 'ai', cats: ['ai'], iconKey: 'huggingface', level: 90, notes: 'Inference endpoints, diffusion models, embeddings' },
+
+  // Architecture & System Design
+  { name: 'System Architecture', cat: 'architecture', cats: ['architecture', 'devops'], iconKey: 'sysArch', level: 90, notes: 'Microservices, event-driven pipelines, API gateways, fault tolerance & distributed systems' },
+  { name: 'System Design Basics', cat: 'architecture', cats: ['architecture', 'devops'], iconKey: 'sysDesign', level: 89, notes: 'Load balancing, horizontal scaling, CAP theorem, caching strategies & database sharding' },
 
   // Languages
-  { name: 'Python', cat: 'languages', iconKey: 'python', level: 96, notes: 'DSA, Backend APIs, AI pipelines, data structures' },
-  { name: 'JavaScript (ES6+)', cat: 'languages', iconKey: 'javascript', level: 92, notes: 'Modern asynchronous workflows, WebGL, DOM' },
-  { name: 'Java', cat: 'languages', iconKey: 'java', level: 88, notes: 'OOP, Multithreading, robust backend architecture' },
-  { name: 'C', cat: 'languages', iconKey: 'c', level: 86, notes: 'Memory management, foundational algorithmic efficiency' },
-  { name: 'SQL', cat: 'languages', iconKey: 'sql', level: 90, notes: 'Relational queries, indexing, schema design' },
-  { name: 'HTML5 & CSS3', cat: 'languages', iconKey: 'html5', level: 95, notes: 'Responsive layouts, 3D CSS, modern animations' },
+  { name: 'Python', cat: 'languages', cats: ['languages'], iconKey: 'python', level: 96, notes: 'DSA, Backend APIs, AI pipelines, data structures' },
+  { name: 'JavaScript (ES6+)', cat: 'languages', cats: ['languages'], iconKey: 'javascript', level: 92, notes: 'Modern asynchronous workflows, WebGL, DOM' },
+  { name: 'Java', cat: 'languages', cats: ['languages'], iconKey: 'java', level: 88, notes: 'OOP, Multithreading, robust backend architecture' },
+  { name: 'C', cat: 'languages', cats: ['languages'], iconKey: 'c', level: 86, notes: 'Memory management, foundational algorithmic efficiency' },
+  { name: 'SQL', cat: 'languages', cats: ['languages', 'devops'], iconKey: 'sql', level: 90, notes: 'Relational queries, indexing, schema design' },
+  { name: 'HTML5 & CSS3', cat: 'languages', cats: ['languages'], iconKey: 'html5', level: 95, notes: 'Responsive layouts, 3D CSS, modern animations' },
 
   // Frameworks & Libraries
-  { name: 'React.js', cat: 'frameworks', iconKey: 'react', level: 92, notes: 'Hooks, state management, component architecture' },
-  { name: 'Node.js & Express', cat: 'frameworks', iconKey: 'nodejs', level: 90, notes: 'High-throughput RESTful APIs, JWT authentication' },
-  { name: 'Django', cat: 'frameworks', iconKey: 'django', level: 88, notes: 'Full-stack Python web development, ORM, admin panel' },
-  { name: 'Bootstrap', cat: 'frameworks', iconKey: 'bootstrap', level: 90, notes: 'Responsive UI grid systems, fluid components' },
+  { name: 'React.js', cat: 'frameworks', cats: ['frameworks'], iconKey: 'react', level: 92, notes: 'Hooks, state management, component architecture' },
+  { name: 'Node.js & Express', cat: 'frameworks', cats: ['frameworks'], iconKey: 'nodejs', level: 90, notes: 'High-throughput RESTful APIs, JWT authentication' },
+  { name: 'Django', cat: 'frameworks', cats: ['frameworks'], iconKey: 'django', level: 88, notes: 'Full-stack Python web development, ORM, admin panel' },
+  { name: 'Bootstrap', cat: 'frameworks', cats: ['frameworks'], iconKey: 'bootstrap', level: 90, notes: 'Responsive UI grid systems, fluid components' },
 
-  // Databases & DevOps
-  { name: 'MongoDB', cat: 'devops', iconKey: 'mongodb', level: 88, notes: 'NoSQL collections, aggregation pipelines' },
-  { name: 'Git & GitHub', cat: 'devops', iconKey: 'git', level: 95, notes: 'Branching strategies, CI workflows, open-source' },
-  { name: 'AWS & Cloud', cat: 'devops', iconKey: 'aws', level: 82, notes: 'S3, EC2 instances, serverless deployment basics' },
-  { name: 'Docker (Basics)', cat: 'devops', iconKey: 'docker', level: 84, notes: 'Containerization, Dockerfile creation, compose' },
-  { name: 'Postman', cat: 'devops', iconKey: 'postman', level: 92, notes: 'API testing suites, environment variables, mock servers' },
-  { name: 'CI / CD', cat: 'devops', iconKey: 'cicd', level: 80, notes: 'Automated testing and deployment pipelines' }
+  // Databases & DevOps / Cloud
+  { name: 'Redis', cat: 'devops', cats: ['devops', 'architecture'], iconKey: 'redis', level: 91, notes: 'In-memory caching, Pub/Sub message broker, session stores & high-throughput memory buffers' },
+  { name: 'MongoDB', cat: 'devops', cats: ['devops'], iconKey: 'mongodb', level: 88, notes: 'NoSQL collections, aggregation pipelines' },
+  { name: 'Git & GitHub', cat: 'devops', cats: ['devops'], iconKey: 'git', level: 95, notes: 'Branching strategies, CI workflows, open-source' },
+  { name: 'AWS & Cloud', cat: 'devops', cats: ['devops', 'architecture'], iconKey: 'aws', level: 82, notes: 'S3, EC2 instances, serverless deployment basics' },
+  { name: 'Docker (Basics)', cat: 'devops', cats: ['devops'], iconKey: 'docker', level: 84, notes: 'Containerization, Dockerfile creation, compose' },
+  { name: 'Postman', cat: 'devops', cats: ['devops'], iconKey: 'postman', level: 92, notes: 'API testing suites, environment variables, mock servers' },
+  { name: 'CI / CD', cat: 'devops', cats: ['devops'], iconKey: 'cicd', level: 80, notes: 'Automated testing and deployment pipelines' }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -57,28 +63,41 @@ document.addEventListener('DOMContentLoaded', () => {
   // 4. Setup Audio Toggle (Enabled by default)
   const audioBtn = document.getElementById('audio-toggle');
   const audioText = document.getElementById('audio-status-text');
+  const drawerAudioBtn = document.getElementById('drawer-audio-btn');
+  const drawerAudioStatus = document.getElementById('drawer-audio-status');
 
-  if (audio.enabled && audioBtn) {
-    audioBtn.classList.add('active');
-    if (audioText) audioText.textContent = 'FX ON';
+  function updateAudioUI() {
+    if (audio.enabled) {
+      audioBtn?.classList.add('active');
+      drawerAudioBtn?.classList.add('active');
+      if (audioText) audioText.textContent = 'FX ON';
+      if (drawerAudioStatus) drawerAudioStatus.textContent = 'Audio FX: ON';
+    } else {
+      audioBtn?.classList.remove('active');
+      drawerAudioBtn?.classList.remove('active');
+      if (audioText) audioText.textContent = 'MUTED';
+      if (drawerAudioStatus) drawerAudioStatus.textContent = 'Audio FX: MUTED';
+    }
   }
 
-  audioBtn?.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const isMuted = !audio.toggle();
+  updateAudioUI();
+
+  function toggleAudioSystem(e) {
+    e?.stopPropagation();
+    audio.toggle();
+    updateAudioUI();
     if (audio.enabled) {
-      audioBtn.classList.add('active');
-      if (audioText) audioText.textContent = 'FX ON';
       showToast('Futuristic Web Audio Enabled 🔊');
     } else {
-      audioBtn.classList.remove('active');
-      if (audioText) audioText.textContent = 'MUTED';
       showToast('Audio FX Muted 🔇');
     }
-  });
+  }
+
+  audioBtn?.addEventListener('click', toggleAudioSystem);
+  drawerAudioBtn?.addEventListener('click', toggleAudioSystem);
 
   // Sound hover triggers on interactive elements
-  const soundTargets = document.querySelectorAll('button, a, .contact-card-item, .achieve-card, .palette-dot-btn, .skill-tab-btn');
+  const soundTargets = document.querySelectorAll('button, a, .contact-card-item, .achieve-card, .palette-dot-btn, .skill-tab-btn, .mobile-palette-btn, .mobile-nav-link');
   soundTargets.forEach(el => {
     el.addEventListener('mouseenter', () => audio.playHover());
   });
@@ -122,8 +141,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     threeScene?.setTheme(pal.three);
 
-    // Update active state across all 5 dots in the navbar palette dock
-    document.querySelectorAll('.palette-dot-btn').forEach(btn => {
+    // Update active state across desktop dots and mobile drawer buttons
+    document.querySelectorAll('.palette-dot-btn, .mobile-palette-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.palette === themeKey);
     });
 
@@ -132,8 +151,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Attach 1-click listener to each of the 5 palette dock dots
-  document.querySelectorAll('.palette-dot-btn').forEach(btn => {
+  // Attach 1-click listener to desktop palette dots & mobile drawer buttons
+  document.querySelectorAll('.palette-dot-btn, .mobile-palette-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
       audio.playClick();
@@ -203,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!skillsGrid) return;
     const filtered = category === 'all' 
       ? SKILLS_DATA 
-      : SKILLS_DATA.filter(s => s.cat === category);
+      : SKILLS_DATA.filter(s => s.cat === category || (Array.isArray(s.cats) && s.cats.includes(category)));
 
     skillsGrid.innerHTML = filtered.map(skill => {
       const svgIcon = ICONS[skill.iconKey] || ICONS.python;
@@ -420,13 +439,80 @@ document.addEventListener('DOMContentLoaded', () => {
   heroResumeBtn?.addEventListener('click', openResume);
   closeResumeBtn?.addEventListener('click', closeResume);
 
+  // 9c. Setup Cyber Mobile Navigation Drawer
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+  const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
+  const mobileNavBackdrop = document.getElementById('mobile-nav-backdrop');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  const drawerResumeBtn = document.getElementById('drawer-resume-btn');
+
+  function openMobileDrawer() {
+    audio.playClick();
+    mobileNavOverlay?.classList.add('active');
+    mobileMenuBtn?.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileDrawer() {
+    mobileNavOverlay?.classList.remove('active');
+    mobileMenuBtn?.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  mobileMenuBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (mobileNavOverlay?.classList.contains('active')) {
+      closeMobileDrawer();
+    } else {
+      openMobileDrawer();
+    }
+  });
+
+  closeMobileMenuBtn?.addEventListener('click', () => {
+    audio.playClick();
+    closeMobileDrawer();
+  });
+
+  mobileNavBackdrop?.addEventListener('click', () => {
+    audio.playClick();
+    closeMobileDrawer();
+  });
+
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('data-target') || link.getAttribute('href')?.replace('#', '');
+      const targetEl = document.getElementById(targetId);
+      closeMobileDrawer();
+      if (targetEl) {
+        audio.playClick();
+        const x = window.innerWidth / 2;
+        const y = window.innerHeight / 2;
+        triggerFlashlightExpand(x, y, () => {
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+        });
+      }
+    });
+  });
+
+  drawerResumeBtn?.addEventListener('click', () => {
+    closeMobileDrawer();
+    openResume();
+  });
+
   resumeModal?.addEventListener('click', (e) => {
     if (e.target === resumeModal) closeResume();
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && resumeModal?.classList.contains('active')) {
-      closeResume();
+    if (e.key === 'Escape') {
+      if (mobileNavOverlay?.classList.contains('active')) {
+        closeMobileDrawer();
+      }
+      if (resumeModal?.classList.contains('active')) {
+        closeResume();
+      }
     }
   });
 
@@ -587,12 +673,14 @@ function injectOfficialLogos() {
   // Skills Category Tabs SVGs
   const tabAll = document.getElementById('tab-svg-all');
   const tabAi = document.getElementById('tab-svg-ai');
+  const tabArchitecture = document.getElementById('tab-svg-architecture');
   const tabLanguages = document.getElementById('tab-svg-languages');
   const tabFrameworks = document.getElementById('tab-svg-frameworks');
   const tabDevops = document.getElementById('tab-svg-devops');
 
   if (tabAll) tabAll.innerHTML = ICONS.tabAll;
   if (tabAi) tabAi.innerHTML = ICONS.tabAi;
+  if (tabArchitecture) tabArchitecture.innerHTML = ICONS.tabArchitecture;
   if (tabLanguages) tabLanguages.innerHTML = ICONS.tabLanguages;
   if (tabFrameworks) tabFrameworks.innerHTML = ICONS.tabFrameworks;
   if (tabDevops) tabDevops.innerHTML = ICONS.tabDevops;

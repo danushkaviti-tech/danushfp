@@ -30,7 +30,7 @@ class CyberAudioManager {
   ensureContext() {
     this.init();
     if (this.ctx && this.ctx.state === 'suspended') {
-      this.ctx.resume().catch(() => {});
+      this.ctx.resume().catch(() => { });
     }
   }
 
@@ -74,14 +74,14 @@ class CyberAudioManager {
           try {
             const voices = window.speechSynthesis.getVoices() || [];
             if (voices.length > 0) {
-              const preferred = voices.find(v => 
-                v.lang && v.lang.startsWith('en') && 
+              const preferred = voices.find(v =>
+                v.lang && v.lang.startsWith('en') &&
                 (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Samantha') || v.name.includes('Zira') || v.name.includes('Jenny') || v.name.includes('David') || v.name.includes('English'))
               ) || voices.find(v => v.lang && v.lang.startsWith('en'));
 
               if (preferred) utterance.voice = preferred;
             }
-          } catch (e) {}
+          } catch (e) { }
         };
 
         assignPreferredVoice();
@@ -149,7 +149,7 @@ class CyberAudioManager {
         osc.start(start);
         osc.stop(start + 0.35);
       });
-    } catch (e) {}
+    } catch (e) { }
   }
 
   // ------------------------------------------------------------------------
@@ -247,7 +247,7 @@ class CyberAudioManager {
 
       osc.start(now);
       osc.stop(now + 2.2);
-    } catch (e) {}
+    } catch (e) { }
   }
 
   stopAmbientSoundscape() {
@@ -260,7 +260,7 @@ class CyberAudioManager {
       this.ambientMasterGain.gain.exponentialRampToValueAtTime(0.0001, now + 1.2);
       setTimeout(() => {
         this.ambientOscillators.forEach(osc => {
-          try { osc.stop(); osc.disconnect(); } catch (e) {}
+          try { osc.stop(); osc.disconnect(); } catch (e) { }
         });
         this.ambientOscillators = [];
       }, 1250);
@@ -289,7 +289,7 @@ class CyberAudioManager {
 
       osc.start(now);
       osc.stop(now + 0.05);
-    } catch (e) {}
+    } catch (e) { }
   }
 
   playClick() {
@@ -311,7 +311,7 @@ class CyberAudioManager {
 
       osc.start(now);
       osc.stop(now + 0.07);
-    } catch (e) {}
+    } catch (e) { }
   }
 
   playPhotonFlash() {
@@ -346,7 +346,7 @@ class CyberAudioManager {
       osc.stop(now + 0.35);
       sub.start(now);
       sub.stop(now + 0.45);
-    } catch (e) {}
+    } catch (e) { }
   }
 
   playTyping() {
@@ -369,7 +369,7 @@ class CyberAudioManager {
 
       osc.start(now);
       osc.stop(now + 0.03);
-    } catch (e) {}
+    } catch (e) { }
   }
 
   playScan() {
@@ -397,7 +397,7 @@ class CyberAudioManager {
 
       osc.start(now);
       osc.stop(now + 0.35);
-    } catch (e) {}
+    } catch (e) { }
   }
 
   playPulse() {
@@ -419,7 +419,7 @@ class CyberAudioManager {
 
       osc.start(now);
       osc.stop(now + 0.2);
-    } catch (e) {}
+    } catch (e) { }
   }
 
   playTabSwitch() {
@@ -441,7 +441,7 @@ class CyberAudioManager {
 
       osc.start(now);
       osc.stop(now + 0.12);
-    } catch (e) {}
+    } catch (e) { }
   }
 
   playSuccess() {
@@ -467,7 +467,7 @@ class CyberAudioManager {
         osc.start(start);
         osc.stop(start + 0.45);
       });
-    } catch (e) {}
+    } catch (e) { }
   }
 }
 

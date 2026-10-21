@@ -61,11 +61,12 @@ Maintains a 8.45 CGPA. Passionate about solving complex algorithmic challenges (
       case 'skills':
         printLine(`
 <strong>TECHNICAL SKILLS MATRIX:</strong>
-• <strong>Languages:</strong> Python, JavaScript, Java, C, SQL, HTML5, CSS3
-• <strong>AI/GenAI:</strong> RAG, LLMs, Embeddings, Vector Databases, Prompt Engineering, Hugging Face
-• <strong>Frameworks:</strong> React.js, Node.js, Express.js, Django, LangChain, Bootstrap
-• <strong>Databases:</strong> MongoDB, SQL (PostgreSQL, MySQL)
-• <strong>Tools & Cloud:</strong> Git, GitHub, VS Code, Postman, AWS, Docker (Basics), CI/CD
+• <strong>AI/GenAI:</strong> RAG Architecture, LangGraph, LLMs & Prompt Eng, LangChain, Embeddings, Vector DBs, Hugging Face
+• <strong>Architecture & System Design:</strong> System Architecture, System Design Basics, Microservices, Scalability, Load Balancing & Caching
+• <strong>Databases & Caching:</strong> Redis (In-Memory / Pub-Sub), MongoDB, SQL (PostgreSQL, MySQL)
+• <strong>Languages:</strong> Python, JavaScript (ES6+), Java, C, SQL, HTML5, CSS3
+• <strong>Frameworks:</strong> React.js, Node.js, Express.js, Django, Bootstrap
+• <strong>Tools & Cloud:</strong> Git, GitHub, VS Code, Postman, AWS Cloud, Docker (Basics), CI/CD
         `);
         break;
 

@@ -198,14 +198,56 @@ export const ICONS = {
     <circle cx="18" cy="12" r="1.5" fill="#00F5A0"/>
   </svg>`,
 
+  // Tech: Redis (Official Brand Layers & In-Memory Store)
+  redis: `<svg viewBox="0 0 24 24" width="24" height="24" fill="none">
+    <path d="M2 9.5L12 4l10 5.5-10 5.5L2 9.5z" fill="#DC382D"/>
+    <path d="M2 13.5L12 19l10-5.5" stroke="#A41E11" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M2 17.5L12 23l10-5.5" stroke="#DC382D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="12" cy="9.5" r="2.2" fill="#FFFFFF"/>
+    <path d="M7 8l5 2.8 5-2.8" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+  </svg>`,
+
+  // Tech: LangGraph (Multi-Agent Cyclic Graph Framework)
+  langgraph: `<svg viewBox="0 0 24 24" width="24" height="24" fill="none">
+    <rect width="24" height="24" rx="5" fill="#181C27"/>
+    <circle cx="6.5" cy="12" r="3" fill="#00A67E"/>
+    <circle cx="17.5" cy="7" r="3" fill="#00F2FE"/>
+    <circle cx="17.5" cy="17" r="3" fill="#A855F7"/>
+    <path d="M9 10.5L15 8" stroke="#00F2FE" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M9 13.5L15 16" stroke="#A855F7" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M17.5 10v4" stroke="#00A67E" stroke-width="1.6" stroke-linecap="round"/>
+    <circle cx="12" cy="12" r="1.5" fill="#FFFFFF"/>
+  </svg>`,
+
+  // Tech: System Architecture (Distributed Systems, Microservices & API Mesh)
+  sysArch: `<svg viewBox="0 0 24 24" width="24" height="24" fill="none">
+    <rect x="2" y="3" width="6" height="5" rx="1.5" stroke="#00F2FE" stroke-width="1.8" fill="rgba(0, 242, 254, 0.15)"/>
+    <rect x="16" y="3" width="6" height="5" rx="1.5" stroke="#00F5A0" stroke-width="1.8" fill="rgba(0, 245, 160, 0.15)"/>
+    <rect x="9" y="10" width="6" height="5" rx="1.5" stroke="#A855F7" stroke-width="1.8" fill="rgba(168, 85, 247, 0.2)"/>
+    <rect x="2" y="17" width="6" height="5" rx="1.5" stroke="#F59E0B" stroke-width="1.8" fill="rgba(245, 158, 11, 0.15)"/>
+    <rect x="16" y="17" width="6" height="5" rx="1.5" stroke="#38BDF8" stroke-width="1.8" fill="rgba(56, 189, 248, 0.15)"/>
+    <path d="M5 8v2.5l4 1.5M19 8v2.5l-4 1.5M12 15v2M12 15l-7 2M12 15l7 2" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round" opacity="0.8"/>
+  </svg>`,
+
+  // Tech: System Design Basics (Load Balancing, Caching, Scaling & High Availability)
+  sysDesign: `<svg viewBox="0 0 24 24" width="24" height="24" fill="none">
+    <circle cx="12" cy="4" r="2.5" stroke="#00F5A0" stroke-width="1.8" fill="rgba(0, 245, 160, 0.2)"/>
+    <rect x="8" y="9.5" width="8" height="4.5" rx="1.5" stroke="#00F2FE" stroke-width="1.8" fill="rgba(0, 242, 254, 0.2)"/>
+    <path d="M12 6.5v3M12 14v2M12 16l-5.5 2M12 16l5.5 2" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="6" cy="19.5" r="2" stroke="#F43F5E" stroke-width="1.6" fill="rgba(244, 63, 94, 0.2)"/>
+    <circle cx="12" cy="20" r="2" stroke="#A855F7" stroke-width="1.6" fill="rgba(168, 85, 247, 0.2)"/>
+    <circle cx="18" cy="19.5" r="2" stroke="#38BDF8" stroke-width="1.6" fill="rgba(56, 189, 248, 0.2)"/>
+  </svg>`,
+
   // General Utility Icons & Categories
   tabAll: `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>`,
   tabAi: `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><line x1="12" y1="9" x2="12" y2="3"/><line x1="14" y1="14" x2="18" y2="18"/><line x1="10" y1="14" x2="6" y2="18"/><line x1="14" y1="10" x2="18" y2="6"/><line x1="10" y1="10" x2="6" y2="6"/></svg>`,
+  tabArchitecture: `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="8" height="8" rx="2"/><rect x="14" y="2" width="8" height="8" rx="2"/><rect x="8" y="14" width="8" height="8" rx="2"/><line x1="6" y1="10" x2="10" y2="14"/><line x1="18" y1="10" x2="14" y2="14"/></svg>`,
   tabLanguages: `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
   tabFrameworks: `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>`,
   tabDevops: `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/><polyline points="12 12 12 16 14 16"/></svg>`,
   
-  email: `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`,
+  email: `<svg viewox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`,
   phone: `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`,
   send: `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>`,
   external: `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`,
