@@ -9,40 +9,42 @@ import confetti from 'canvas-confetti';
 // Technical Skills Database from Danush's Resume with Authentic Vector Brand Icons
 const SKILLS_DATA = [
   // AI & GenAI
-  { name: 'RAG Architecture', cat: 'ai', cats: ['ai', 'architecture'], iconKey: 'rag', level: 95, notes: 'Vector DB routing, metadata retrieval, citation grounding' },
-  { name: 'LangGraph', cat: 'ai', cats: ['ai', 'frameworks', 'architecture'], iconKey: 'langgraph', level: 93, notes: 'Multi-agent state machines, cyclical graphs, human-in-the-loop & tool routing' },
-  { name: 'LLMs & Prompt Eng.', cat: 'ai', cats: ['ai'], iconKey: 'llm', level: 92, notes: 'System prompt design, few-shot prompting, output parsing' },
-  { name: 'LangChain', cat: 'ai', cats: ['ai', 'frameworks'], iconKey: 'langchain', level: 94, notes: 'Chains, agents, document loaders, custom retrievers' },
-  { name: 'Face Embeddings', cat: 'ai', cats: ['ai'], iconKey: 'faceEmbedding', level: 90, notes: '512-D tensor representations, Cosine distance matching' },
-  { name: 'Vector Databases', cat: 'ai', cats: ['ai'], iconKey: 'vectordb', level: 88, notes: 'Chroma, FAISS, Pinecone index optimization' },
-  { name: 'Hugging Face API', cat: 'ai', cats: ['ai'], iconKey: 'huggingface', level: 90, notes: 'Inference endpoints, diffusion models, embeddings' },
+  { name: 'RAG Architecture', cat: 'ai', cats: ['ai', 'architecture'], iconKey: 'rag', level: 70, notes: 'Vector DB routing, metadata retrieval, citation grounding' },
+  { name: 'LangGraph', cat: 'ai', cats: ['ai', 'frameworks', 'architecture'], iconKey: 'langgraph', level: 68, notes: 'Multi-agent state machines, cyclical graphs, human-in-the-loop & tool routing' },
+  { name: 'ChromaDB', cat: 'ai', cats: ['ai', 'devops', 'architecture'], iconKey: 'chromadb', level: 68, notes: 'Vector database, high-dimensional similarity search, embeddings store & metadata filtering' },
+  { name: 'MCP (Model Context Protocol)', cat: 'ai', cats: ['ai', 'architecture'], iconKey: 'mcp', level: 66, notes: 'Standardized LLM tool integration, custom MCP servers & multi-agent routing' },
+  { name: 'LLMs & Prompt Eng.', cat: 'ai', cats: ['ai'], iconKey: 'llm_workflow', level: 67, notes: 'System prompt design, few-shot prompting, output parsing' },
+  { name: 'LangChain', cat: 'ai', cats: ['ai', 'frameworks'], iconKey: 'langchain', level: 69, notes: 'Chains, agents, document loaders, custom retrievers' },
+  { name: 'Face Embeddings', cat: 'ai', cats: ['ai'], iconKey: 'faceEmbedding', level: 65, notes: '512-D tensor representations, Cosine distance matching' },
+  { name: 'Vector Databases', cat: 'ai', cats: ['ai'], iconKey: 'vectordb', level: 66, notes: 'ChromaDB, FAISS, Pinecone index optimization' },
+  { name: 'Hugging Face API', cat: 'ai', cats: ['ai'], iconKey: 'huggingface', level: 65, notes: 'Inference endpoints, diffusion models, embeddings' },
 
-  // Architecture & System Design
-  { name: 'System Architecture', cat: 'architecture', cats: ['architecture', 'devops'], iconKey: 'sysArch', level: 90, notes: 'Microservices, event-driven pipelines, API gateways, fault tolerance & distributed systems' },
-  { name: 'System Design Basics', cat: 'architecture', cats: ['architecture', 'devops'], iconKey: 'sysDesign', level: 89, notes: 'Load balancing, horizontal scaling, CAP theorem, caching strategies & database sharding' },
+  // Architecture & System Infrastructure
+  { name: 'System Architecture', cat: 'architecture', cats: ['architecture', 'devops'], iconKey: 'sysArch', level: 68, notes: 'Microservices, event-driven pipelines, API gateways, fault tolerance & distributed systems' },
 
   // Languages
-  { name: 'Python', cat: 'languages', cats: ['languages'], iconKey: 'python', level: 96, notes: 'DSA, Backend APIs, AI pipelines, data structures' },
-  { name: 'JavaScript (ES6+)', cat: 'languages', cats: ['languages'], iconKey: 'javascript', level: 92, notes: 'Modern asynchronous workflows, WebGL, DOM' },
-  { name: 'Java', cat: 'languages', cats: ['languages'], iconKey: 'java', level: 88, notes: 'OOP, Multithreading, robust backend architecture' },
-  { name: 'C', cat: 'languages', cats: ['languages'], iconKey: 'c', level: 86, notes: 'Memory management, foundational algorithmic efficiency' },
-  { name: 'SQL', cat: 'languages', cats: ['languages', 'devops'], iconKey: 'sql', level: 90, notes: 'Relational queries, indexing, schema design' },
-  { name: 'HTML5 & CSS3', cat: 'languages', cats: ['languages'], iconKey: 'html5', level: 95, notes: 'Responsive layouts, 3D CSS, modern animations' },
+  { name: 'Python', cat: 'languages', cats: ['languages'], iconKey: 'python', level: 70, notes: 'DSA, Backend APIs, AI pipelines, data structures' },
+  { name: 'TypeScript', cat: 'languages', cats: ['languages'], iconKey: 'typescript', level: 67, notes: 'Type safety, generics, interfaces, scalable full-stack codebases & node runtimes' },
+  { name: 'JavaScript (ES6+)', cat: 'languages', cats: ['languages'], iconKey: 'javascript', level: 68, notes: 'Modern asynchronous workflows, WebGL, DOM' },
+  { name: 'Java', cat: 'languages', cats: ['languages'], iconKey: 'java', level: 64, notes: 'OOP, Multithreading, robust backend architecture' },
+  { name: 'C', cat: 'languages', cats: ['languages'], iconKey: 'c', level: 62, notes: 'Memory management, foundational algorithmic efficiency' },
+  { name: 'SQL', cat: 'languages', cats: ['languages', 'devops'], iconKey: 'sql', level: 66, notes: 'Relational queries, indexing, schema design' },
+  { name: 'HTML5 & CSS3', cat: 'languages', cats: ['languages'], iconKey: 'html5', level: 70, notes: 'Responsive layouts, 3D CSS, modern animations' },
 
-  // Frameworks & Libraries
-  { name: 'React.js', cat: 'frameworks', cats: ['frameworks'], iconKey: 'react', level: 92, notes: 'Hooks, state management, component architecture' },
-  { name: 'Node.js & Express', cat: 'frameworks', cats: ['frameworks'], iconKey: 'nodejs', level: 90, notes: 'High-throughput RESTful APIs, JWT authentication' },
-  { name: 'Django', cat: 'frameworks', cats: ['frameworks'], iconKey: 'django', level: 88, notes: 'Full-stack Python web development, ORM, admin panel' },
-  { name: 'Bootstrap', cat: 'frameworks', cats: ['frameworks'], iconKey: 'bootstrap', level: 90, notes: 'Responsive UI grid systems, fluid components' },
+  // Frameworks & Protocols
+  { name: 'React.js', cat: 'frameworks', cats: ['frameworks'], iconKey: 'react', level: 68, notes: 'Hooks, state management, component architecture' },
+  { name: 'Node.js & Express', cat: 'frameworks', cats: ['frameworks'], iconKey: 'nodejs', level: 67, notes: 'High-throughput RESTful APIs, JWT authentication' },
+  { name: 'WebSockets', cat: 'frameworks', cats: ['frameworks', 'architecture'], iconKey: 'websockets', level: 65, notes: 'Full-duplex real-time communication, bi-directional event streaming & low latency' },
+  { name: 'Bootstrap', cat: 'frameworks', cats: ['frameworks'], iconKey: 'bootstrap', level: 64, notes: 'Responsive UI grid systems, fluid components' },
 
   // Databases & DevOps / Cloud
-  { name: 'Redis', cat: 'devops', cats: ['devops', 'architecture'], iconKey: 'redis', level: 91, notes: 'In-memory caching, Pub/Sub message broker, session stores & high-throughput memory buffers' },
-  { name: 'MongoDB', cat: 'devops', cats: ['devops'], iconKey: 'mongodb', level: 88, notes: 'NoSQL collections, aggregation pipelines' },
-  { name: 'Git & GitHub', cat: 'devops', cats: ['devops'], iconKey: 'git', level: 95, notes: 'Branching strategies, CI workflows, open-source' },
-  { name: 'AWS & Cloud', cat: 'devops', cats: ['devops', 'architecture'], iconKey: 'aws', level: 82, notes: 'S3, EC2 instances, serverless deployment basics' },
-  { name: 'Docker (Basics)', cat: 'devops', cats: ['devops'], iconKey: 'docker', level: 84, notes: 'Containerization, Dockerfile creation, compose' },
-  { name: 'Postman', cat: 'devops', cats: ['devops'], iconKey: 'postman', level: 92, notes: 'API testing suites, environment variables, mock servers' },
-  { name: 'CI / CD', cat: 'devops', cats: ['devops'], iconKey: 'cicd', level: 80, notes: 'Automated testing and deployment pipelines' }
+  { name: 'Redis', cat: 'devops', cats: ['devops', 'architecture'], iconKey: 'redis', level: 66, notes: 'In-memory caching, Pub/Sub message broker, session stores & high-throughput memory buffers' },
+  { name: 'MongoDB', cat: 'devops', cats: ['devops'], iconKey: 'mongodb', level: 65, notes: 'NoSQL collections, aggregation pipelines' },
+  { name: 'Git & GitHub', cat: 'devops', cats: ['devops'], iconKey: 'git', level: 70, notes: 'Branching strategies, CI workflows, open-source' },
+  { name: 'AWS & Cloud', cat: 'devops', cats: ['devops', 'architecture'], iconKey: 'aws_basics', level: 62, notes: 'S3, EC2 instances, serverless deployment basics' },
+  { name: 'Docker (Basics)', cat: 'devops', cats: ['devops'], iconKey: 'docker', level: 63, notes: 'Containerization, Dockerfile creation, compose' },
+  { name: 'Postman', cat: 'devops', cats: ['devops'], iconKey: 'postman', level: 68, notes: 'API testing suites, environment variables, mock servers' },
+  { name: 'CI / CD', cat: 'devops', cats: ['devops'], iconKey: 'cicd', level: 61, notes: 'Automated testing and deployment pipelines' }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -555,6 +557,45 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     showToast('🚀 Registered! You will be notified when Personal RAG & AI Navigation deploy!');
     setTimeout(closeUpcomingFeatures, 1600);
+  });
+
+  // 9c. Setup Event Photo Lightbox Modal
+  const photoModal = document.getElementById('photo-lightbox-modal');
+  const closePhotoModalBtn = document.getElementById('close-lightbox-modal');
+  const lightboxImg = document.getElementById('lightbox-modal-img');
+  const lightboxTitle = document.getElementById('lightbox-modal-title');
+  const lightboxDesc = document.getElementById('lightbox-modal-desc');
+
+  document.querySelectorAll('.lead-photo-item').forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const img = item.dataset.img || item.querySelector('img')?.src;
+      const title = item.dataset.title || 'Event Photograph';
+      const desc = item.dataset.desc || '';
+
+      if (lightboxImg && img) lightboxImg.src = img;
+      if (lightboxTitle) lightboxTitle.textContent = title;
+      if (lightboxDesc) lightboxDesc.textContent = desc;
+
+      audio.playClick();
+      photoModal?.classList.add('active');
+    });
+  });
+
+  function closePhotoLightbox() {
+    audio.playClick();
+    photoModal?.classList.remove('active');
+  }
+
+  closePhotoModalBtn?.addEventListener('click', closePhotoLightbox);
+  photoModal?.addEventListener('click', (e) => {
+    if (e.target === photoModal) closePhotoLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && photoModal?.classList.contains('active')) {
+      closePhotoLightbox();
+    }
   });
 
   // 10. Clipboard Copy Handlers with Toast

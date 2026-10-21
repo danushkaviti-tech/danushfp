@@ -139,7 +139,42 @@ export const ICONS = {
     <path d="M13.2 2.1c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10zm4.2 13.9l-3.3-1.9-1.8 3.1-1.8-3.1-3.3 1.9 1.9-3.3-3.1-1.8 3.1-1.8-1.9-3.3 3.3 1.9 1.8-3.1 1.8 3.1 3.3-1.9-1.9 3.3 3.1 1.8-3.1 1.8 1.9 3.3z" fill="#FF6C37"/>
   </svg>`,
 
-  // Tech: Django (Official Brand Logo)
+  // Tech: ChromaDB Vector Database
+  chromadb: `<svg viewBox="0 0 24 24" width="24" height="24" fill="none">
+    <circle cx="6" cy="6" r="3.2" fill="#FF5E5E"/>
+    <circle cx="18" cy="6" r="3.2" fill="#FF9A3C"/>
+    <circle cx="6" cy="18" r="3.2" fill="#3B82F6"/>
+    <circle cx="18" cy="18" r="3.2" fill="#10B981"/>
+    <circle cx="12" cy="12" r="3" fill="#A855F7"/>
+    <line x1="6" y1="6" x2="12" y2="12" stroke="#FFFFFF" stroke-width="1.2" opacity="0.6"/>
+    <line x1="18" y1="6" x2="12" y2="12" stroke="#FFFFFF" stroke-width="1.2" opacity="0.6"/>
+    <line x1="6" y1="18" x2="12" y2="12" stroke="#FFFFFF" stroke-width="1.2" opacity="0.6"/>
+    <line x1="18" y1="18" x2="12" y2="12" stroke="#FFFFFF" stroke-width="1.2" opacity="0.6"/>
+  </svg>`,
+
+  // Tech: TypeScript
+  typescript: `<svg viewBox="0 0 24 24" width="24" height="24" fill="none">
+    <rect width="24" height="24" rx="4" fill="#3178C6"/>
+    <path d="M11.5 10.2h-3v8.5H6.8v-8.5H3.8V8.6h7.7v1.6zm2.3 8.6c1.1.5 2.4.7 3.6.7 1.9 0 3-.7 3-2 0-1.2-.8-1.8-2.3-2.3l-.9-.3c-1.3-.5-1.8-.9-1.8-1.6 0-.8.7-1.3 1.8-1.3.9 0 1.8.3 2.5.7l.6-1.5c-.8-.4-1.9-.6-3-.6-2.1 0-3.4 1.1-3.4 2.8 0 1.3.9 2 2.3 2.5l.9.3c1.4.5 1.9 1 1.9 1.7 0 .9-.8 1.4-2 1.4-1.1 0-2.2-.4-3-.9l-.6 1.7z" fill="#FFFFFF"/>
+  </svg>`,
+
+  // Tech: Model Context Protocol (MCP)
+  mcp: `<svg viewBox="0 0 24 24" width="24" height="24" fill="none">
+    <rect width="24" height="24" rx="5" fill="#1E1E2E"/>
+    <circle cx="7" cy="12" r="3" stroke="#00F5A0" stroke-width="1.8" fill="rgba(0, 245, 160, 0.2)"/>
+    <circle cx="17" cy="7" r="2.5" stroke="#00F2FE" stroke-width="1.8" fill="rgba(0, 242, 254, 0.2)"/>
+    <circle cx="17" cy="17" r="2.5" stroke="#A855F7" stroke-width="1.8" fill="rgba(168, 85, 247, 0.2)"/>
+    <path d="M10 12h3M13 12l2-3.5M13 12l2 3.5" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+    <circle cx="12" cy="12" r="1.5" fill="#FFFFFF"/>
+  </svg>`,
+
+  // Tech: WebSockets
+  websockets: `<svg viewBox="0 0 24 24" width="24" height="24" fill="none">
+    <path d="M12 2L4 7v10l8 5 8-5V7l-8-5z" stroke="#00F2FE" stroke-width="1.6" fill="rgba(0, 242, 254, 0.08)"/>
+    <path d="M8 10l-3 2 3 2M16 10l3 2-3 2" stroke="#00F5A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M7 12h10" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2 2"/>
+    <circle cx="12" cy="12" r="2" fill="#00F5A0"/>
+  </svg>`,
 
   // Tech: Bootstrap (Official Brand Logo)
   bootstrap: `<svg viewBox="0 0 24 24" width="24" height="24" fill="none">

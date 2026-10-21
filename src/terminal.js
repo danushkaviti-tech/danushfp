@@ -36,6 +36,7 @@ export function setupTerminal() {
 Available commands:
   <span class="cmd-hl">bio</span>          - About Kaviti Danush
   <span class="cmd-hl">skills</span>       - Tech stack & proficiency
+  <span class="cmd-hl">leadership</span>   - CodeBlitz 2K26 Lead & Google AI Studio Keynote
   <span class="cmd-hl">projects</span>     - Production AI & Web systems
   <span class="cmd-hl">exp</span>          - Work experience (Future Interns)
   <span class="cmd-hl">achievements</span> - LeetCode Knight & CodeChef stats
@@ -61,13 +62,30 @@ Maintains a 8.45 CGPA. Passionate about solving complex algorithmic challenges (
       case 'skills':
         printLine(`
 <strong>TECHNICAL SKILLS MATRIX:</strong>
-• <strong>AI/GenAI:</strong> RAG Architecture, LangGraph, LLMs & Prompt Eng, LangChain, Embeddings, Vector DBs, Hugging Face
-• <strong>Architecture & System Design:</strong> System Architecture, System Design Basics, Microservices, Scalability, Load Balancing & Caching
-• <strong>Databases & Caching:</strong> Redis (In-Memory / Pub-Sub), MongoDB, SQL (PostgreSQL, MySQL)
-• <strong>Languages:</strong> Python, JavaScript (ES6+), Java, C, SQL, HTML5, CSS3
-• <strong>Frameworks:</strong> React.js, Node.js, Express.js, Django, Bootstrap
+• <strong>AI/GenAI:</strong> RAG Architecture, LangGraph, ChromaDB, MCP (Model Context Protocol), LLMs & Prompt Eng, LangChain, Face Embeddings, Vector DBs, Hugging Face
+• <strong>Architecture & Infrastructure:</strong> System Architecture, Microservices, Event-Driven Pipelines, API Gateways, Fault Tolerance & Distributed Systems
+• <strong>Databases & Caching:</strong> ChromaDB, Redis (In-Memory / Pub-Sub), MongoDB, SQL (PostgreSQL, MySQL)
+• <strong>Languages:</strong> Python, TypeScript, JavaScript (ES6+), Java, C, SQL, HTML5, CSS3
+• <strong>Frameworks & Protocols:</strong> React.js, Node.js, Express.js, WebSockets, Bootstrap
 • <strong>Tools & Cloud:</strong> Git, GitHub, VS Code, Postman, AWS Cloud, Docker (Basics), CI/CD
         `);
+        break;
+
+      case 'leadership':
+      case 'leader':
+      case 'events':
+        printLine(`
+<strong>LEADERSHIP QUALITIES & EVENT MILESTONES:</strong>
+🏆 <strong>Lead Organizer & Contest Head — CodeBlitz 2K26:</strong>
+   - Spearheaded and directed the flagship competitive coding contest CodeBlitz 2K26.
+   - Authored algorithm challenges (DP, Graphs, Advanced Data Structures), orchestrated lab environments, and mentored 100+ participants.
+🎤 <strong>Keynote Speaker — Mastering Google AI Studio & Gemini API:</strong>
+   - Delivered an expert hands-on session on Google AI Studio, prompt design, multimodal models, and how developers can accelerate production projects.
+🎖️ <strong>IEEE Vice-Chair & SSC Club Lead:</strong>
+   - Fostered collaborative tech circles, conducted student hackathons, and mentored peers across full-stack and algorithmic problem solving.
+        `);
+        confetti({ particleCount: 35, spread: 55, origin: { y: 0.8 } });
+        audio.playSuccess();
         break;
 
       case 'projects':
